@@ -76,7 +76,6 @@
 <ItemGroup>
   <PackageReference Include="Microsoft.VisualStudio.SDK" Version="17.0.31919.166" />
   <PackageReference Include="Microsoft.VisualStudio.VsixColorCompiler" Version="17.0.31709.430" />
-</ItemGroup>
   <PackageReference Include="Microsoft.VisualStudio.SDK" Version="16.0.206" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(VSToolsPath)\VSSDK\Microsoft.VsSDK.targets" Condition="'$(VSToolsPath)' != ''" />
