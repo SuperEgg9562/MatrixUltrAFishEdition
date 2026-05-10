@@ -77,4 +77,5 @@
   <PackageReference Include="Microsoft.VisualStudio.SDK" Version="17.0.31919.166" />
   <PackageReference Include="Microsoft.VisualStudio.VsixColorCompiler" Version="17.0.31709.430" />
   <PackageReference Include="Microsoft.VisualStudio.SDK" Version="16.0.206" />
+ <ItemGroup />
 </Project>
