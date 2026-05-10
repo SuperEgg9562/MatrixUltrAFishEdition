@@ -1,8 +1,12 @@
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011">
   <Metadata>
-    <Identity Id="MatrixUltrA12.e1e706e2-05d3-4da9-8754-652cd8ab65f4" Version="1.1.4" Language="en-US" Publisher="UltrAFisH" />
+    <Identity Id="MatrixUltrA12.e1e706e2-05d3-4da9-8754-652cd8ab65f4" Version="1.1.5" Language="en-US" Publisher="UltrAFisH" />
     <DisplayName>MatrixUltrAFishEdtion</DisplayName>
-    <Description xml:space="preserve">VSTheme project. Based on UstymUkhman's vs code theme</Description>
+    <Description xml:space="preserve">VSTheme project.
+
+ Based on UstymUkhman's vs code theme.
+
+</Description>
     <MoreInfo>https://github.com/SuperEgg9562/MatrixUltrAFishEdition</MoreInfo>
     <Icon>UltrAFishTecH_128x128.png</Icon>
     <Tags>Matrix,Green</Tags>

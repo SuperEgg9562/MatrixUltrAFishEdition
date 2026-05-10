@@ -66,6 +66,7 @@
     <Content Include="bin\Release\MatrixUltrA12.dll" />
     <Content Include="bin\Release\MatrixUltrA12.pdb" />
     <Content Include="bin\Release\UltrAFishTecH_128x128.png" />
+    <Content Include="MatrixUltrA12.slnx" />
     <Content Include="UltrAFishTecH_128x128.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
