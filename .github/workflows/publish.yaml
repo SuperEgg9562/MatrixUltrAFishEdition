@@ -23,7 +23,7 @@ jobs:
         run: nuget restore MatrixUltrA12.slnx
 
       - name: Build Extension (Release)
-        run: msbuild MatrixUltrA12.sln /p:Configuration=Release /p:DeployExtension=False
+        run: msbuild MatrixUltrA12.slnx /p:Configuration=Release /p:DeployExtension=False
 
       - name: Publish to Marketplace
         uses: CodingWithCalvin/GHA-VSMarketplacePublisher@v2.0.0
