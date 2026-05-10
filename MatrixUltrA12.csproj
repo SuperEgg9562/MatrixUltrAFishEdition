@@ -45,6 +45,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <None Include="bin\Release\MatrixUltrA12.vsix" />
     <None Include="CustomTheme.vstheme">
       <SubType>Designer</SubType>
     </None>
