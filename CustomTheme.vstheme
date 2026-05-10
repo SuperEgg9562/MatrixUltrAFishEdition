@@ -9690,8 +9690,8 @@
         <Foreground Type="CT_RAW" Source="FF0C0C0C" />
       </Color>
       <Color Name="Plain Text">
-        <Background Type="CT_RAW" Source="FF1AD12D" />
-        <Foreground Type="CT_RAW" Source="FF24FF55" />
+        <Background Type="CT_RAW" Source="FF0C0C0C" />
+        <Foreground Type="CT_RAW" Source="FF00CC00" />
       </Color>
       <Color Name="Selected Text">
         <Background Type="CT_RAW" Source="FF24FF55" />
@@ -10002,7 +10002,7 @@
         <Foreground Type="CT_RAW" Source="FFDDFFDD" />
       </Color>
       <Color Name="TagBackground">
-        <Background Type="CT_RAW" Source="FF060907" />
+        <Background Type="CT_RAW" Source="FF008800" />
       </Color>
       <Color Name="TagBorder">
         <Background Type="CT_RAW" Source="FF242424" />
@@ -10114,8 +10114,8 @@
     </Category>
     <Category Name="ToolTips" GUID="{a9a5637f-b2a8-422e-8fb5-dfb4625f0111}">
       <Color Name="Plain Text">
-        <Background Type="CT_RAW" Source="FF5EF627" />
-        <Foreground Type="CT_RAW" Source="FF24FF55" />
+        <Background Type="CT_INVALID" Source="00000000" />
+        <Foreground Type="CT_RAW" Source="FF00CC00" />
       </Color>
     </Category>
     <Category Name="TreeView" GUID="{92ecf08e-8b13-4cf4-99e9-ae2692382185}">
@@ -10391,7 +10391,7 @@
         <Background Type="CT_RAW" Source="FF88FF88" />
       </Color>
       <Color Name="IgnoredMouseOverBackground">
-        <Background Type="CT_RAW" Source="FF360C00" />
+        <Background Type="CT_RAW" Source="FF003300" />
       </Color>
       <Color Name="IgnoredMouseOverBorder">
         <Background Type="CT_RAW" Source="FF003600" />
@@ -10699,7 +10699,7 @@
         <Foreground Type="CT_INVALID" Source="00000000" />
       </Color>
       <Color Name="SelectedText">
-        <Background Type="CT_RAW" Source="FF71E671" />
+        <Background Type="CT_INVALID" Source="00000000" />
         <Foreground Type="CT_RAW" Source="FFDDFFDD" />
       </Color>
     </Category>
