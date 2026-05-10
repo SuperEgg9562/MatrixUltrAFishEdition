@@ -1,0 +1,34 @@
+name: Publish Extension to Marketplace
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  publish:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+
+      - name: Setup MSBuild
+        uses: microsoft/setup-msbuild@v1.0.0
+
+      - name: Setup NuGet
+        uses: nuget/setup-nuget@v1
+        with:
+          nuget-version: '5.X'
+
+      - name: Restore NuGet packages
+        run: nuget restore MatrixUltrA12.sln
+
+      - name: Build Extension (Release)
+        run: msbuild MatrixUltrA12.sln /p:Configuration=Release /p:DeployExtension=False
+
+      - name: Publish to Marketplace
+        uses: CodingWithCalvin/GHA-VSMarketplacePublisher@v2
+        with:
+          marketplace-pat: ${{ secrets.VS_MARKETPLACE_PAT }}
+          publish-manifest-path: './publishManifest.json'
+          vsix-path: './MatrixUltrA12/bin/Release/MatrixUltrA12.vsix'
