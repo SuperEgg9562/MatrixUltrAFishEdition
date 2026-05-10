@@ -20,7 +20,7 @@ jobs:
           nuget-version: '5.X'
 
       - name: Restore NuGet packages
-        run: nuget restore MatrixUltrA12.sln
+        run: nuget restore MatrixUltrA12.slnx
 
       - name: Build Extension (Release)
         run: msbuild MatrixUltrA12.sln /p:Configuration=Release /p:DeployExtension=False
