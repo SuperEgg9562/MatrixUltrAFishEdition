@@ -21,7 +21,7 @@ jobs:
         uses: timheuer/vsix-version-stamp@v2
         with:
           # Use the path relative to your repo root
-          manifest-file: 'MatrixUltrA12/source.extension.vsixmanifest'
+          manifest-file: './source.extension.vsixmanifest'
 
       - name: Restore NuGet Packages
         run: dotnet restore MatrixUltrA12.slnx
@@ -35,5 +35,5 @@ jobs:
           registryUrl: 'https://marketplace.visualstudio.com'
           personalAccessToken: ${{ secrets.VS_PUBLISHER_ACCESS_TOKEN }}
           # Point to the BUILT VSIX file, not the manifest
-          extensionFile: 'MatrixUltrA12/bin/Release/MatrixUltrA12.vsix'
+          extensionFile: './bin/Release/MatrixUltrA12.vsix'
 
