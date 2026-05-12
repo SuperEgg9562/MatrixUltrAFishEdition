@@ -1,8 +1,10 @@
 # MatrixUltrA12
 
-[![Marketplace](https://shields.io)](https://visualstudio.com)
+[![Installs](https://vsmarketplacebadges.dev)](https://visualstudio.com)
 
-[![Installs](https://shields.io)](https://visualstudio.com)
+
+[![Version](https://vsmarketplacebadges.dev)](https://visualstudio.com)
+
 
 
 VSTheme project. 
