@@ -32,7 +32,7 @@ jobs:
       - name: Publish to Marketplace
         uses: CodingWithCalvin/GHA-VSMarketplacePublisher@v2.0.0
         with:
-          registryUrl: 'https://marketplace.visualstudio.com'
-          personalAccessToken: ${{ secrets.VS_PUBLISHER_ACCESS_TOKEN }}
-          extensionFile: './bin/Release/MatrixUltrA12.vsix'
+          marketplace-pat: ${{ secrets.VS_PUBLISHER_ACCESS_TOKEN }}
+          vsix-path: 'MatrixUltrA12/bin/Release/MatrixUltrA12.vsix'
+
 
