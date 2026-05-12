@@ -1,7 +1,7 @@
 # MatrixUltrA12
 
-#[![Installs](https://shields.io)](https://visualstudio.com)
+[![Installs](https://shields.io)](https://visualstudio.com)
 
-#VSTheme project. 
+VSTheme project. 
 
 Based on UstymUkhman's vs code theme
