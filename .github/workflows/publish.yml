@@ -53,9 +53,11 @@ jobs:
       - name: Generate Version Badge
         shell: pwsh
         run: |
-          $version = "${{ steps.vsix_version.outputs.version }}"
+          $versionNumber = "${{ steps.vsix_version.outputs.version }}"
          
           $url = "https://img.shields.io/badge/version-$version-00FF00"
+
+          if ([string]::IsNullOrWhiteSpace($versionNumber)) { $versionNumber = "unknown" }
 
           Invoke-WebRequest -Uri $url -OutFile "version-badge.svg"
 
