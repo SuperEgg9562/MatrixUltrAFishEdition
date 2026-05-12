@@ -1,6 +1,6 @@
 {
   "$schema": "http://json.schemastore.org/vsix-publish",
-  "categories": ["Themes"],
+  "categories": ["Other"],
   "identity": {"internalName": "MatrixThemeUltrAAlpha117"},
   "overview": "README.md",
   "publisher": "UltrAFisH",
