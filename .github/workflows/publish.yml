@@ -13,7 +13,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0 # Required for pushing back to the repo
+          fetch-depth: 0 
 
       - name: Setup MSBuild
         uses: microsoft/setup-msbuild@v2
