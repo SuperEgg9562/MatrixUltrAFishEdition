@@ -1,8 +1,6 @@
 {
   "$schema": "http://json.schemastore.org/vsix-publish",
-  "catergories": [
-    "Other"
-  ],
+  "catergories": ["Other"],
   "identity": {
     "internalName": "MatrixUltrA12.e1e706e205d34da9875487652cd8ab65f4"
   },
