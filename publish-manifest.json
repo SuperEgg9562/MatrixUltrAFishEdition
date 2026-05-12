@@ -1,8 +1,13 @@
 {
   "$schema": "http://json.schemastore.org/vsix-publish",
-  "categories": ["Other"],
-  "identity": {"internalName": "MatrixThemeUltrAAlpha117"},
+  "categories": [ "Other" ],
+  "identity": { "internalName": "MatrixThemeUltrAAlpha117" },
   "overview": "README.md",
   "publisher": "UltrAFisH",
-  "repo": "https://github.com/SuperEgg9562/MatrixUltrAFishEdition"
+  "repo": "https://github.com/SuperEgg9562/MatrixUltrAFishEdition",
+  "assetFiles": [
+    {
+      "path": "screenshots/main-preview.png",
+      "assetType": "Microsoft.VisualStudio.Services.Screenshots"
+    }
 }

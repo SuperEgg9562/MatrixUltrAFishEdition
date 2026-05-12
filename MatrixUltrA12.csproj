@@ -387,6 +387,11 @@
     <Content Include="bin\Release\zh-Hant\Microsoft.VisualStudio.Utilities.resources.dll" />
     <Content Include="bin\Release\zh-Hant\Microsoft.VisualStudio.Validation.resources.dll" />
     <Content Include="bin\Release\zh-Hant\StreamJsonRpc.resources.dll" />
+    <Content Include="preview.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="screenshots\main-preview.png" />
     <Content Include="UltrAFishTecH_128x128.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
