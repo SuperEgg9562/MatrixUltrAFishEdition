@@ -7,7 +7,8 @@
   "repo": "https://github.com/SuperEgg9562/MatrixUltrAFishEdition",
   "assetFiles": [
     {
-      "path": "./screenshots/main-preview.png",
+      "pathOnDisk": "screenshots/main-preview.png",
       "assetType": "Microsoft.VisualStudio.Services.Screenshots"
     }
+  ]
 }
