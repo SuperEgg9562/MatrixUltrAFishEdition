@@ -18,6 +18,7 @@ jobs:
           dotnet-version: '9.0.x' 
 
       - name: Increment VSIX Version
+        id: vsix_version
         uses: timheuer/vsix-version-stamp@v2
         with:
           manifest-file: './source.extension.vsixmanifest'
@@ -35,3 +36,13 @@ jobs:
           marketplace-pat: ${{ secrets.VS_PUBLISHER_ACCESS_TOKEN }}
           vsix-path: './bin/Release/MatrixUltrA12.vsix'
           publish-manifest-path: 'publish-manifest.json'
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: v${{ steps.vsix_version.outputs.version }}
+          name: Release v${{ steps.vsix_version.outputs.version }}
+          files: 'MatrixUltrA12/bin/Release/MatrixUltrA12.vsix'
+          generate_release_notes: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
