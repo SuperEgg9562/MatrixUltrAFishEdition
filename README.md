@@ -4,8 +4,7 @@
 ![Matrix Theme Preview](screenshots/main-preview.png)
 
 
-![Version](https://githubusercontent.com)
-
+![Version](./version-badge.svg)
 
 
 VSTheme project. 
