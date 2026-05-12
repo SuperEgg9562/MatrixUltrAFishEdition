@@ -41,7 +41,7 @@ jobs:
           $v = "${{ steps.vsix_version.outputs.version }}"
           if ([string]::IsNullOrWhiteSpace($v)) { $v = "1.0.${{ github.run_number }}" }
           $url = "https://img.shields.io/badge/version-$v-00FF00"
-          Invoke-WebRequest -Uri $url -OutFile "version-badge.png"
+          Invoke-WebRequest -Uri $url -OutFile "version-badge.png" -UserAgent "Mozilla/5.0"
           echo "FINAL_VERSION=$v" >> $env:GITHUB_ENV
 
       - name: Commit and Push Changes

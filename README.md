@@ -3,7 +3,7 @@
 ## Theme Preview
 ![Matrix Theme Preview](screenshots/main-preview.png)
 
-![Version](version-badge.png)
+![Version](https://img.shields.io/badge/version-1.0.0-00FF00)
 
 VSTheme project. 
 
