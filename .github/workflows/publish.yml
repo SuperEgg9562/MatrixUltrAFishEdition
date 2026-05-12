@@ -4,13 +4,16 @@ on:
     branches: [ main ]
 
 permissions:
-   contents: write  
+  contents: write  
+
 jobs:
   build-and-publish:
     runs-on: windows-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # Required for pushing back to the repo
 
       - name: Setup MSBuild
         uses: microsoft/setup-msbuild@v2
@@ -25,13 +28,29 @@ jobs:
         uses: timheuer/vsix-version-stamp@v2
         with:
           manifest-file: './source.extension.vsixmanifest'
-          version-number: '1.0.${{ github.run_number }}'
 
       - name: Restore NuGet Packages
         run: dotnet restore MatrixUltrA12.slnx -p:RuntimeIdentifier=win
 
       - name: Build VSIX  
         run: msbuild MatrixUltrA12.slnx /p:Configuration=Release /p:RuntimeIdentifier=win /p:DeployExtension=false /p:ZipPackageCompressionLevel=Normal
+
+      - name: Generate Version Badge
+        shell: pwsh
+        run: |
+          $v = "${{ steps.vsix_version.outputs.version }}"
+          if ([string]::IsNullOrWhiteSpace($v)) { $v = "0.0.1" }
+          $url = "https://img.shields.io/badge/version-$v-00FF00"
+          Invoke-WebRequest -Uri $url -OutFile "version-badge.svg"
+
+      - name: Commit and Push Changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add source.extension.vsixmanifest version-badge.svg
+          git commit -m "chore: bump version to ${{ steps.vsix_version.outputs.version }}" || echo "No changes"
+          git pull origin main --rebase
+          git push
 
       - name: Publish to Marketplace
         uses: CodingWithCalvin/GHA-VSMarketplacePublisher@v2.0.0
@@ -45,29 +64,7 @@ jobs:
         with:
           tag_name: v${{ steps.vsix_version.outputs.version }}
           name: Release v${{ steps.vsix_version.outputs.version }}
-          
           files: '**/bin/Release/*.vsix'
           generate_release_notes: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Generate Version Badge
-        shell: pwsh
-        run: |
-          $v = "${{ steps.vsix_version.outputs.version }}"
-         
-          if ([string]::IsNullOrWhiteSpace($v)) { $v = "0.0.0" }
-
-          $url = "https://img.shields.io/badge/version-$v-00FF00"
-
-          Invoke-WebRequest -Uri $url -OutFile "version-badge.svg"
-
-
-      - name: Commit and Push Badge
-        run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          git add version-badge.svg
-          git commit -m "chore: update version badge to ${{ steps.vsix_version.outputs.version }}" || echo "No changes to commit"
-          git pull origin main --rebase
-          git push
