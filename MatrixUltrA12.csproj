@@ -73,6 +73,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <None Include=".github\workflows\publish.yml" />
     <None Include="bin\Release\MatrixUltrA12.vsix" />
     <None Include="CustomTheme.vstheme">
       <SubType>Designer</SubType>

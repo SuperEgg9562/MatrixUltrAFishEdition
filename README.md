@@ -4,11 +4,7 @@
 ![Matrix Theme Preview](screenshots/main-preview.png)
 
 
-[![Installs](https://vsmarketplacebadges.dev)](https://visualstudio.com)
-
-
-[![Version](https://vsmarketplacebadges.dev)](https://visualstudio.com)
-
+![Version](./version-badge.svg)
 
 
 VSTheme project. 

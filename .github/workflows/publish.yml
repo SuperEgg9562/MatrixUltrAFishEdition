@@ -32,7 +32,6 @@ jobs:
       - name: Build VSIX  
         run: msbuild MatrixUltrA12.slnx /p:Configuration=Release /p:RuntimeIdentifier=win /p:DeployExtension=false /p:ZipPackageCompressionLevel=Normal
 
-
       - name: Publish to Marketplace
         uses: CodingWithCalvin/GHA-VSMarketplacePublisher@v2.0.0
         with:
@@ -40,12 +39,31 @@ jobs:
           vsix-path: './bin/Release/MatrixUltrA12.vsix'
           publish-manifest-path: 'publish-manifest.json'
 
+      - name: Generate Version Badge
+        shell: pwsh
+        run: |
+          $version = "${{ steps.vsix_version.outputs.version }}"
+         
+          $url = "https://img.shields.io/badge/version-$version-00FF00"
+
+          Invoke-WebRequest -Uri $url -OutFile "version-badge.svg"
+
+
+      - name: Commit and Push Badge
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git pull origin main --rebase
+          git add version-badge.svg
+          git commit -m "chore: update version badge to ${{ steps.vsix_version.outputs.version }}" || echo "No changes to commit"
+          git push
+
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
         with:
           tag_name: v${{ steps.vsix_version.outputs.version }}
           name: Release v${{ steps.vsix_version.outputs.version }}
-          # Use double asterisks to find the vsix anywhere in the bin folder
+          
           files: '**/bin/Release/*.vsix'
           generate_release_notes: true
         env:
