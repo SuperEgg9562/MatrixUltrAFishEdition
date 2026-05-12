@@ -12,8 +12,8 @@
       "assetType": "Microsoft.VisualStudio.Services.Screenshots"
     },
     {
-      "pathOnDisk": "version-badge.svg",
-      "targetPath": "version-badge.svg",
+      "pathOnDisk": "version-badge.png",
+      "targetPath": "version-badge.png",
       "assetType": "Microsoft.VisualStudio.Services.Icons.Default"
     }
   ]
