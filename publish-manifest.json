@@ -8,6 +8,7 @@
   "assetFiles": [
     {
       "pathOnDisk": "screenshots/main-preview.png",
+      "targetPath": "screenshots/main-preview.png",
       "assetType": "Microsoft.VisualStudio.Services.Screenshots"
     }
   ]
