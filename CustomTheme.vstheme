@@ -1,5 +1,5 @@
 ﻿<Themes>
-  <Theme Name="MatrixUltrA12 (2)" GUID="{99f07f01-b5f7-4db4-8632-f2bb073fc694}" BaseGUID="{f0f1f93f-718b-4cc0-93e9-5cbbc2ce6912}">
+  <Theme Name="MatrixUltrA12 (3)" GUID="{e98d8ec8-d7a0-46c2-8550-c594cd7ee314}" BaseGUID="{f0f1f93f-718b-4cc0-93e9-5cbbc2ce6912}">
     <Category Name="ACDCOverview" GUID="{c8887ac6-3c60-4209-9d69-8f4c12a60044}">
       <Color Name="Body">
         <Background Type="CT_RAW" Source="FF0C0C0C" />
@@ -8116,7 +8116,7 @@
         <Foreground Type="CT_RAW" Source="FF88FF88" />
       </Color>
       <Color Name="Line Number">
-        <Background Type="CT_RAW" Source="FF0C0C0C" />
+        <Background Type="CT_RAW" Source="FF69EE28" />
         <Foreground Type="CT_RAW" Source="FF24FF55" />
       </Color>
       <Color Name="Markup Attribute">
@@ -8652,7 +8652,7 @@
         <Foreground Type="CT_INVALID" Source="00000000" />
       </Color>
       <Color Name="Selected Line Number">
-        <Background Type="CT_AUTOMATIC" Source="00000000" />
+        <Background Type="CT_RAW" Source="FFFFFFFF" />
         <Foreground Type="CT_RAW" Source="FFE0E0E0" />
       </Color>
       <Color Name="mergeEditor.AcceptedSimilarLine">
