@@ -20,8 +20,8 @@ jobs:
       - name: Increment VSIX Version
         uses: timheuer/vsix-version-stamp@v2
         with:
-         
-          manifest-file: C:\Users\UltrA\source\repos\MatrixUltrA12\source.extension.vsixmanifest
+          # Use the path relative to your repo root
+          manifest-file: 'MatrixUltrA12/source.extension.vsixmanifest'
 
       - name: Restore NuGet Packages
         run: dotnet restore MatrixUltrA12.slnx
@@ -32,7 +32,8 @@ jobs:
       - name: Publish to Marketplace
         uses: CodingWithCalvin/GHA-VSMarketplacePublisher@v2.0.0
         with:
-          registryUrl: 'https://visualstudio.com'
+          registryUrl: 'https://marketplace.visualstudio.com'
           personalAccessToken: ${{ secrets.VS_PUBLISHER_ACCESS_TOKEN }}
-          
-          extensionFile: 'MatrixUltrA12/source.extension.vsixmanifest"'
+          # Point to the BUILT VSIX file, not the manifest
+          extensionFile: 'MatrixUltrA12/bin/Release/MatrixUltrA12.vsix'
+
