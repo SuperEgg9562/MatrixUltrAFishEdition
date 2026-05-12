@@ -51,6 +51,8 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+	  <CreateVsixContainer>true</CreateVsixContainer>
+	  <DeployExtension>false</DeployExtension>
   </PropertyGroup>
   <!-- Release | x86 -->
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
@@ -60,6 +62,8 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+	  <CreateVsixContainer>true</CreateVsixContainer>
+	  <DeployExtension>false</DeployExtension>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
