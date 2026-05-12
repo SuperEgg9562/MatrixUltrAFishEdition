@@ -35,4 +35,4 @@ jobs:
           registryUrl: 'https://visualstudio.com'
           personalAccessToken: ${{ secrets.VS_PUBLISHER_ACCESS_TOKEN }}
           
-          extensionFile: 'https://github.com/SuperEgg9562/MatrixUltrAFishEdition/blob/main/source.extension.vsixmanifest'
+          extensionFile: 'MatrixUltrA12/source.extension.vsixmanifest"'
