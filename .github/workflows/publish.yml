@@ -34,4 +34,4 @@ jobs:
         with:
           marketplace-pat: ${{ secrets.VS_PUBLISHER_ACCESS_TOKEN }}
           vsix-path: 'MatrixUltrA12/bin/Release/MatrixUltrA12.vsix'
-          publish-manifest-path: 'publish-manifest.json'
+          publish-manifest-path: './publish-manifest.json'
