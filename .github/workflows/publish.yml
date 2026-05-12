@@ -57,7 +57,7 @@ jobs:
          
           if ([string]::IsNullOrWhiteSpace($v)) { $v = "0.0.0" }
 
-          $url = "https://img.shields.io/badge/version-$version-00FF00"
+          $url = "https://img.shields.io/badge/version-$v-00FF00"
 
           Invoke-WebRequest -Uri $url -OutFile "version-badge.svg"
 
