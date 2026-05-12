@@ -27,7 +27,7 @@ jobs:
         id: vsix_version
         uses: timheuer/vsix-version-stamp@v2
         with:
-          manifest-file: './source.extension.vsixmanifest'
+          manifest-file: 'source.extension.vsixmanifest'
 
       - name: Restore NuGet Packages
         run: dotnet restore MatrixUltrA12.slnx -p:RuntimeIdentifier=win
@@ -39,35 +39,36 @@ jobs:
         shell: pwsh
         run: |
           $v = "${{ steps.vsix_version.outputs.version }}"
-          if ([string]::IsNullOrWhiteSpace($v)) { $v = "0.0.1" }
+          if ([string]::IsNullOrWhiteSpace($v)) { $v = "1.0.${{ github.run_number }}" }
           $url = "https://img.shields.io/badge/version-$v-00FF00"
           Invoke-WebRequest -Uri $url -OutFile "version-badge.svg"
+          echo "FINAL_VERSION=$v" >> $env:GITHUB_ENV
 
       - name: Commit and Push Changes
         run: |
           git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"                   
+          git config --local user.name "GitHub Action"     
           git add source.extension.vsixmanifest version-badge.svg
           git stash
           git pull origin main --rebase
-          git stash pop || echo "Nothing to pop"             
-          git commit -m "chore: bump version to ${{ steps.vsix_version.outputs.version }} [skip ci]" || echo "No changes to commit"
+          git stash pop || echo "No stash to pop"
+          git commit -m "chore: bump version to ${{ env.FINAL_VERSION }} [skip ci]" || echo "No changes"
           git push
-
 
       - name: Publish to Marketplace
         uses: CodingWithCalvin/GHA-VSMarketplacePublisher@v2.0.0
         with:
           marketplace-pat: ${{ secrets.VS_PUBLISHER_ACCESS_TOKEN }}
-          vsix-path: './bin/Release/MatrixUltrA12.vsix'
+          vsix-path: 'bin/Release/MatrixUltrA12.vsix'
           publish-manifest-path: 'publish-manifest.json' 
 
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: v${{ steps.vsix_version.outputs.version }}
-          name: Release v${{ steps.vsix_version.outputs.version }}
-          files: '**/bin/Release/*.vsix'
+          tag_name: v${{ env.FINAL_VERSION }}
+          name: Release v${{ env.FINAL_VERSION }}
+          files: 'bin/Release/MatrixUltrA12.vsix'
           generate_release_notes: true
+          make_latest: true
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}    
