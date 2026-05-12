@@ -1,6 +1,6 @@
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011">
   <Metadata>
-    <Identity Id="MatrixUltrA12.e1e706e2-05d3-4da9-8754-652cd8ab65f4" Version="1.1.7" Language="en-US" Publisher="UltrAFisH" />
+    <Identity Id="MatrixUltrA12.e1e706e2-05d3-4da9-8754-652cd8ab65f4" Version="1.1.53" Language="en-US" Publisher="UltrAFisH" />
     <DisplayName> MatrixUltrAFishEdtion</DisplayName>
     <Description xml:space="preserve">VSTheme project.
 
@@ -9,6 +9,7 @@
 </Description>
     <MoreInfo>https://github.com/SuperEgg9562/MatrixUltrAFishEdition</MoreInfo>
     <Icon>UltrAFishTecH_128x128.png</Icon>
+    <PreviewImage>preview.png</PreviewImage>
     <Tags>Matrix,Green</Tags>
   </Metadata>
   <Installation>
