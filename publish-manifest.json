@@ -10,6 +10,11 @@
       "pathOnDisk": "screenshots/main-preview.png",
       "targetPath": "screenshots/main-preview.png",
       "assetType": "Microsoft.VisualStudio.Services.Screenshots"
+    },
+    {
+      "pathOnDisk": "version-badge.svg",
+      "targetPath": "version-badge.svg",
+      "assetType": "Microsoft.VisualStudio.Services.Icons.Default"
     }
   ]
 }
