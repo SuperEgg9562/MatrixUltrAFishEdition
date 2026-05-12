@@ -30,7 +30,7 @@ jobs:
         run: msbuild MatrixUltrA12.slnx /p:Configuration=Release /p:DeployExtension=false /p:ZipPackageCompressionLevel=Normal
 
       - name: Publish to Marketplace
-        uses: CodingWithCalvin/GHA-VSMarketplacePublisher@v2
+        uses: CodingWithCalvin/GHA-VSMarketplacePublisher@v2.0.0
         with:
           registryUrl: 'https://visualstudio.com'
           personalAccessToken: ${{ secrets.VS_PUBLISHER_ACCESS_TOKEN }}
