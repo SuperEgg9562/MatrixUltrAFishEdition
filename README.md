@@ -3,9 +3,7 @@
 ## Theme Preview
 ![Matrix Theme Preview](screenshots/main-preview.png)
 
-
 ![Version](version-badge.png)
-
 
 VSTheme project. 
 
