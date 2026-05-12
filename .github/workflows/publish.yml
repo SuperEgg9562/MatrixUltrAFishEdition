@@ -1,0 +1,38 @@
+name: Publish to Marketplace
+on:
+  push:
+    branches: [ main ]
+jobs:
+  build-and-publish:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup MSBuild
+        uses: microsoft/setup-msbuild@v2
+
+      - name: Setup .NET SDK
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '9.0.x' 
+
+      - name: Increment VSIX Version
+        uses: timheuer/vsix-version-stamp@v2
+        with:
+         
+          manifest-file: MatrixUltrA12/source.extension.vsixmanifest
+
+      - name: Restore NuGet Packages
+        run: dotnet restore MatrixUltrA12.slnx
+
+      - name: Build VSIX  
+        run: msbuild MatrixUltrA12.slnx /p:Configuration=Release /p:DeployExtension=false /p:ZipPackageCompressionLevel=Normal
+
+      - name: Publish to Marketplace
+        uses: CodingWithCalvin/GHA-VSMarketplacePublisher@v2
+        with:
+          registryUrl: 'https://visualstudio.com'
+          personalAccessToken: ${{ secrets.VS_PUBLISHER_ACCESS_TOKEN }}
+          
+          extensionFile: 'MatrixUltrA12/bin/Release/MatrixUltrA12.vsix'
