@@ -66,7 +66,7 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git pull origin main --rebase
           git add version-badge.svg
+          git pull origin main --rebase
           git commit -m "chore: update version badge to ${{ steps.vsix_version.outputs.version }}" || echo "No changes to commit"
           git push
