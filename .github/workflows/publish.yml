@@ -21,7 +21,7 @@ jobs:
         uses: timheuer/vsix-version-stamp@v2
         with:
          
-          manifest-file: https://github.com/SuperEgg9562/MatrixUltrAFishEdition/blob/main/source.extension.vsixmanifest
+          manifest-file: C:\Users\UltrA\source\repos\MatrixUltrA12\source.extension.vsixmanifest
 
       - name: Restore NuGet Packages
         run: dotnet restore MatrixUltrA12.slnx
