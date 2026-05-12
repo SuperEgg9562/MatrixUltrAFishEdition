@@ -392,9 +392,14 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="screenshots\main-preview.png" />
+    <Content Include="screenshots\main-preview.png">
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
     <Content Include="UltrAFishTecH_128x128.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="version-badge.svg">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
   </ItemGroup>
