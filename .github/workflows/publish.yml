@@ -2,6 +2,9 @@ name: Publish to Marketplace
 on:
   push:
     branches: [ main ]
+
+permissions:
+   contents: write  
 jobs:
   build-and-publish:
     runs-on: windows-latest
@@ -42,7 +45,8 @@ jobs:
         with:
           tag_name: v${{ steps.vsix_version.outputs.version }}
           name: Release v${{ steps.vsix_version.outputs.version }}
-          files: 'MatrixUltrA12/bin/Release/MatrixUltrA12.vsix'
+          # Use double asterisks to find the vsix anywhere in the bin folder
+          files: '**/bin/Release/*.vsix'
           generate_release_notes: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
