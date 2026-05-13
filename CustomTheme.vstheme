@@ -1,5 +1,5 @@
 ﻿<Themes>
-  <Theme Name="MatrixUltrA12 (3)" GUID="{e98d8ec8-d7a0-46c2-8550-c594cd7ee314}" BaseGUID="{f0f1f93f-718b-4cc0-93e9-5cbbc2ce6912}">
+  <Theme Name="MatrixUltrA12 (4)" GUID="{8f8acaf6-95ea-4d64-9a48-11831f966b75}" BaseGUID="{f0f1f93f-718b-4cc0-93e9-5cbbc2ce6912}">
     <Category Name="ACDCOverview" GUID="{c8887ac6-3c60-4209-9d69-8f4c12a60044}">
       <Color Name="Body">
         <Background Type="CT_RAW" Source="FF0C0C0C" />
@@ -9690,7 +9690,7 @@
         <Foreground Type="CT_RAW" Source="FF0C0C0C" />
       </Color>
       <Color Name="Plain Text">
-        <Background Type="CT_RAW" Source="FF0C0C0C" />
+        <Background Type="CT_RAW" Source="FF20BF1D" />
         <Foreground Type="CT_RAW" Source="FF00CC00" />
       </Color>
       <Color Name="Selected Text">
@@ -9848,7 +9848,7 @@
     </Category>
     <Category Name="ThemedAcceleratedDialog" GUID="{a2859846-e4aa-452d-ac41-8cc0e4e72e4c}">
       <Color Name="AltButtonBackground">
-        <Background Type="CT_RAW" Source="FF3D3D3D" />
+        <Background Type="CT_RAW" Source="FF000000" />
       </Color>
       <Color Name="AltButtonBorder">
         <Background Type="CT_RAW" Source="FF424242" />
@@ -9973,7 +9973,7 @@
         <Foreground Type="CT_RAW" Source="FFDDFFDD" />
       </Color>
       <Color Name="PromotionBoxBackground">
-        <Background Type="CT_RAW" Source="FF424242" />
+        <Background Type="CT_RAW" Source="FF030303" />
       </Color>
       <Color Name="PromotionBoxBorder">
         <Background Type="CT_RAW" Source="FF424242" />
@@ -10002,7 +10002,7 @@
         <Foreground Type="CT_RAW" Source="FFDDFFDD" />
       </Color>
       <Color Name="TagBackground">
-        <Background Type="CT_RAW" Source="FF008800" />
+        <Background Type="CT_RAW" Source="FF030503" />
       </Color>
       <Color Name="TagBorder">
         <Background Type="CT_RAW" Source="FF242424" />
@@ -10114,7 +10114,7 @@
     </Category>
     <Category Name="ToolTips" GUID="{a9a5637f-b2a8-422e-8fb5-dfb4625f0111}">
       <Color Name="Plain Text">
-        <Background Type="CT_INVALID" Source="00000000" />
+        <Background Type="CT_RAW" Source="FF16F51F" />
         <Foreground Type="CT_RAW" Source="FF00CC00" />
       </Color>
     </Category>
@@ -10550,7 +10550,7 @@
         <Background Type="CT_RAW" Source="FF24FF55" />
       </Color>
       <Color Name="ToastPanelBackground">
-        <Background Type="CT_RAW" Source="FF1F1F1F" />
+        <Background Type="CT_RAW" Source="FF0A0A0A" />
       </Color>
       <Color Name="ToastPanelBorder">
         <Background Type="CT_RAW" Source="FF030303" />
@@ -10635,7 +10635,7 @@
         <Foreground Type="CT_RAW" Source="FFFF4540" />
       </Color>
       <Color Name="LayoverBackground">
-        <Background Type="CT_RAW" Source="FF787878" />
+        <Background Type="CT_RAW" Source="FF090808" />
       </Color>
       <Color Name="LayoverRibbon">
         <Background Type="CT_RAW" Source="FF787878" />
@@ -10988,7 +10988,7 @@
     </Category>
     <Category Name="WelcomeExperience" GUID="{df76799d-28de-4975-81af-3357270f57eb}">
       <Color Name="WelcomeExperienceBackground">
-        <Background Type="CT_RAW" Source="FF24FF55" />
+        <Background Type="CT_RAW" Source="FF000000" />
       </Color>
       <Color Name="WelcomeExperienceButtonBackground">
         <Background Type="CT_RAW" Source="FF24FF55" />
