@@ -1,5 +1,5 @@
 ﻿<Themes>
-  <Theme Name="MatrixUltrA12 (7)" GUID="{cffeffe9-787e-4b6d-8969-9e6a4c4f63e9}" BaseGUID="{f0f1f93f-718b-4cc0-93e9-5cbbc2ce6912}">
+  <Theme Name="MatrixUltrA12 (8)" GUID="{1d6dbd3f-15c5-4b26-b6a2-ebf0dd984665}" BaseGUID="{f0f1f93f-718b-4cc0-93e9-5cbbc2ce6912}">
     <Category Name="ACDCOverview" GUID="{c8887ac6-3c60-4209-9d69-8f4c12a60044}">
       <Color Name="Body">
         <Background Type="CT_RAW" Source="FF0C0C0C" />
@@ -1556,7 +1556,7 @@
         <Background Type="CT_RAW" Source="FF090909" />
       </Color>
       <Color Name="InnerTabSelectedText">
-        <Background Type="CT_RAW" Source="FFFAFAFA" />
+        <Background Type="CT_RAW" Source="FF18FF0E" />
       </Color>
       <Color Name="InnerTabText">
         <Background Type="CT_RAW" Source="FF3CFC0B" />
@@ -4182,7 +4182,7 @@
         <Background Type="CT_RAW" Source="FF030303" />
       </Color>
       <Color Name="FileTabScrollBarThumbPressed">
-        <Background Type="CT_RAW" Source="FF999999" />
+        <Background Type="CT_RAW" Source="FF18FF0E" />
       </Color>
       <Color Name="FileTabSecondarySeparator">
         <Background Type="CT_RAW" Source="FF3D3D3D" />
