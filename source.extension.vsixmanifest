@@ -29,5 +29,6 @@
     <Asset Type="Microsoft.VisualStudio.ColorTheme" Path="CustomTheme.vstheme" />
     <Asset Type="Microsoft.VisualStudio.ColorTheme" Path="CustomTheme.vstheme" />
     <Asset Type="Microsoft.VisualStudio.ColorTheme" Path="CustomTheme.vstheme" />
+    <Asset Type="Microsoft.VisualStudio.ColorTheme" Path="CustomTheme.vstheme" />
   </Assets>
 </PackageManifest>
