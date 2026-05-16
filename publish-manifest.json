@@ -1,7 +1,7 @@
 {
   "$schema": "http://json.schemastore.org/vsix-publish",
   "categories": [ "Other" ],
-  "identity": { "internalName": "MatrixUltrA12" },
+  "identity": { "internalName": "MatrixThemeUltrAAlpha117" },
   "overview": "README.md",
   "publisher": "UltrAFisH",
   "repo": "https://github.com/SuperEgg9562/MatrixUltrAFishEdition",

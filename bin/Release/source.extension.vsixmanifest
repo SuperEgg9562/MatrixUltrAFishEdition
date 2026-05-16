@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
   <Metadata>
-    <Identity Id="MatrixUltrA12.e1e706e2-05d3-4da9-8754-652cd8ab65f4" Version="1.1.55" Language="en-US" Publisher="UltrAFisH" />
+    <Identity Id="MatrixUltrA12.e1e706e2-05d3-4da9-8754-652cd8ab65f4" Version="1.1.56" Language="en-US" Publisher="UltrAFisH" />
     <DisplayName>MatrixUltrA12</DisplayName>
     <Description xml:space="preserve">Full Matrix-style Visual Studio theme with black editor surfaces, neon green chrome, and screenshot-matched MatrixUltrA12 colors.</Description>
     <MoreInfo>https://github.com/SuperEgg9562/MatrixUltrAFishEdition</MoreInfo>
@@ -11,6 +11,12 @@
   </Metadata>
   <Installation>
     <InstallationTarget Id="Microsoft.VisualStudio.Community" Version="[17.0, 18.0)">
+      <ProductArchitecture>amd64</ProductArchitecture>
+    </InstallationTarget>
+    <InstallationTarget Id="Microsoft.VisualStudio.Pro" Version="[17.0, 18.0)">
+      <ProductArchitecture>amd64</ProductArchitecture>
+    </InstallationTarget>
+    <InstallationTarget Id="Microsoft.VisualStudio.Enterprise" Version="[17.0, 18.0)">
       <ProductArchitecture>amd64</ProductArchitecture>
     </InstallationTarget>
   </Installation>
