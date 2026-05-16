@@ -26,5 +26,9 @@
   </Prerequisites>
   <Assets>
     <Asset Type="Microsoft.VisualStudio.VsPackage" Path="|%CurrentProject%;PkgdefProjectOutputGroup|" d:Source="Project" d:ProjectName="%CurrentProject%" />
+    <Asset Type="Microsoft.VisualStudio.ColorTheme" Path="CustomTheme.vstheme" />
+    <Asset Type="Microsoft.VisualStudio.ColorTheme" Path="CustomTheme.vstheme" />
+    <Asset Type="Microsoft.VisualStudio.ColorTheme" Path="CustomTheme.vstheme" />
+    <Asset Type="Microsoft.VisualStudio.ColorTheme" Path="CustomTheme.vstheme" />
   </Assets>
 </PackageManifest>
