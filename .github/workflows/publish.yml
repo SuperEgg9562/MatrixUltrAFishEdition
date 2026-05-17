@@ -42,13 +42,6 @@ jobs:
           git commit -m "chore: bump version to ${{ steps.vsix_version.outputs.version }} [skip ci]" || echo "No changes"
           git push
 
-      - name: Publish to Marketplace
-        uses: CodingWithCalvin/GHA-VSMarketplacePublisher@v2.0.0
-        with:
-          marketplace-pat: ${{ secrets.VS_PUBLISHER_ACCESS_TOKEN }}
-          vsix-path: 'bin/Release/MatrixUltrA12.vsix'
-          publish-manifest-path: 'publish-manifest.json' 
-
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
         with:
@@ -59,3 +52,12 @@ jobs:
           make_latest: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
+
+      - name: Publish to Marketplace
+        uses: CodingWithCalvin/GHA-VSMarketplacePublisher@v2.0.0
+        with:
+          marketplace-pat: ${{ secrets.VS_PUBLISHER_ACCESS_TOKEN }}
+          vsix-path: 'bin/Release/MatrixUltrA12.vsix'
+          publish-manifest-path: 'publish-manifest.json' 
+
+      
