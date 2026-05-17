@@ -15,21 +15,22 @@ jobs:
         with:
           fetch-depth: 0 
 
+      - name: Get VSIX Version
+        id: vsix_version
+        shell: pwsh
+        run: |
+          [xml]$manifest = Get-Content source.extension.vsixmanifest
+          $version = $manifest.PackageManifest.Metadata.Identity.Version
+          if ([string]::IsNullOrWhiteSpace($version)) { $version = "1.0.${{ github.run_number }}" }
+          echo "version=$version" >> $env:GITHUB_OUTPUT
+
       - name: Generate Version Badge
         shell: pwsh
         run: |
           $v = "${{ steps.vsix_version.outputs.version }}"
-          if ([string]::IsNullOrWhiteSpace($v)) { $v = "1.0.${{ github.run_number }}" }
           $url = "https://img.shields.io/badge/version-$v-00FF00"
           Invoke-WebRequest -Uri $url -OutFile "version-badge.png" -UserAgent "Mozilla/5.0"
           echo "FINAL_VERSION=$v" >> $env:GITHUB_ENV
-
-      - name: Get VSIX from release assets
-        uses: dsaltares/fetch-gh-release-asset@main
-        with:
-          version: tags/${{ github.event.release.tag_name }}
-          file: 'bin/Release/MatrixUltrA12.vsix'
-          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Commit and Push Changes
         run: |
@@ -39,7 +40,7 @@ jobs:
           git stash
           git pull origin main --rebase
           git stash pop || echo "No stash to pop"
-          git commit -m "chore: bump version to ${{ env.FINAL_VERSION }} [skip ci]" || echo "No changes"
+          git commit -m "chore: bump version to ${{ steps.vsix_version.outputs.version }} [skip ci]" || echo "No changes"
           git push
 
       - name: Publish to Marketplace
@@ -58,4 +59,4 @@ jobs:
           generate_release_notes: true
           make_latest: true
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}    
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
