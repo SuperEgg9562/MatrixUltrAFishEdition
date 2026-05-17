@@ -45,12 +45,44 @@ jobs:
             throw "VSIX file not found: bin/Release/MatrixUltrA12.vsix"
           }
 
-      - name: Publish to Marketplace
-        uses: CodingWithCalvin/GHA-VSMarketplacePublisher@v2.0.0
-        with:
-          marketplace-pat: ${{ secrets.VS_PUBLISHER_ACCESS_TOKEN }}
-          vsix-path: bin/Release/MatrixUltrA12.vsix
-          publish-manifest-path: publish-manifest.json
+      - name: Publish to Marketplace (with retry)
+        shell: pwsh
+        env:
+          VS_PAT: ${{ secrets.VS_PUBLISHER_ACCESS_TOKEN }}
+        run: |
+          $vsixPublisher = "${env:ProgramFiles}\Microsoft Visual Studio\2022\Enterprise\vssdk\VisualStudioIntegration\tools\bin\VsixPublisher.exe"
+
+          if (!(Test-Path $vsixPublisher)) {
+          throw "VsixPublisher.exe not found: $vsixPublisher"
+          }
+
+          $maxAttempts = 10
+          $waitSeconds = 90
+
+          for ($attempt = 1; $attempt -le $maxAttempts; $attempt++) {
+          Write-Host "Publish attempt $attempt of $maxAttempts"
+
+          & $vsixPublisher `
+          publish `
+          -payload "bin/Release/MatrixUltrA12.vsix" `
+          -publishManifest "publish-manifest.json" `
+          -personalAccessToken $env:VS_PAT
+
+          if ($LASTEXITCODE -eq 0) {
+          Write-Host "Marketplace publish succeeded."
+          exit 0
+          }
+
+           if ($LASTEXITCODE -eq 29 -and $attempt -lt $maxAttempts) {
+           Write-Host "Marketplace is busy (VsixPub0029). Waiting $waitSeconds seconds before retry..."
+           Start-Sleep -Seconds $waitSeconds
+           continue
+           }
+
+          throw "Marketplace publish failed with exit code $LASTEXITCODE"
+          }
+
+          throw "Marketplace publish failed after $maxAttempts attempts."
 
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
