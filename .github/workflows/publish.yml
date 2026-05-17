@@ -21,7 +21,6 @@ jobs:
         run: |
           [xml]$manifest = Get-Content source.extension.vsixmanifest
           $version = $manifest.PackageManifest.Metadata.Identity.Version
-          if ([string]::IsNullOrWhiteSpace($version)) { $version = "1.0.${{ github.run_number }}" }
           echo "version=$version" >> $env:GITHUB_OUTPUT
 
       - name: Generate Version Badge
