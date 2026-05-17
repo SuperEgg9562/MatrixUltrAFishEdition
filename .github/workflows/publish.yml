@@ -25,7 +25,7 @@ jobs:
           echo "FINAL_VERSION=$v" >> $env:GITHUB_ENV
 
       - name: Get VSIX from release assets
-        uses: dsaltares/fetch-gh-release-asset@master
+        uses: dsaltares/fetch-gh-release-asset@main
         with:
           version: tags/${{ github.event.release.tag_name }}
           file: 'bin/Release/MatrixUltrA12.vsix'
