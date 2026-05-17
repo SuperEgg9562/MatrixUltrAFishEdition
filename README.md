@@ -3,7 +3,7 @@
 ## Theme Preview
 ![Matrix Theme Preview](screenshots/main-preview.png)
 
-![Version](https://img.shields.io/badge/version-1.0.0-00FF00)
+![Version](https://img.shields.io/github/v/release/SuperEgg9562/MatrixUltrAFishEdition?color=00FF00)
 
 VSTheme project. 
 
