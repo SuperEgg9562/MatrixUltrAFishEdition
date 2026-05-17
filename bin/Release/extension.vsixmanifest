@@ -27,7 +27,7 @@
     <Asset Type="Microsoft.VisualStudio.VsPackage" Path="|%CurrentProject%;PkgdefProjectOutputGroup|" />
   </Assets>
   <Assets>
-    <Asset Type="Microsoft.VisualStudio.VsPackage" Path="|%CurrentProject%;PkgdefProjectOutputGroup|" />
-    <Asset Type="Microsoft.VisualStudio.Content" Path="MatrixUltrAFishEdition.vstheme" />
+    <Asset Type="Microsoft.VisualStudio.VsixColorTheme" Path="MatrixUltrAFishEdition.vstheme" />
+    <Asset Type="Microsoft.VisualStudio.VsPackage" Path="MatrixUltrA12.pkgdef" />
   </Assets>
 </PackageManifest>
