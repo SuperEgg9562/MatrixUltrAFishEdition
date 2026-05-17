@@ -29,9 +29,6 @@ bld/
 [Ll]ogs/
 [Rr]elease/
 !bin/Release/MatrixUltrA12.vsix
-!bin/Release/extension.vsixmanifest
-!bin/Release/MatrixUltrAFishEdition.pkgdef
-!bin/Release/MatrixUltrAFishEdition.vstheme
 
 # Visual Studio 2015/2017 cache/options directory
 .vs/

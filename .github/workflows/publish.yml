@@ -45,7 +45,7 @@ jobs:
         uses: CodingWithCalvin/GHA-VSMarketplacePublisher@v2.0.0
         with:
           marketplace-pat: ${{ secrets.VS_PUBLISHER_ACCESS_TOKEN }}
-          vsix-path: 'bin/Release/MatrixUltrA12.vsix'
+          vsix-path: '**/*.vsix'
           publish-manifest-path: 'publish-manifest.json' 
 
       - name: Create GitHub Release
@@ -53,7 +53,7 @@ jobs:
         with:
           tag_name: v${{ env.FINAL_VERSION }}
           name: Release v${{ env.FINAL_VERSION }}
-          files: 'bin/Release/MatrixUltrA12.vsix'
+          files: '**/*.vsix'
           generate_release_notes: true
           make_latest: true
         env:
