@@ -1,19 +1,18 @@
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011">
   <Metadata>
     <Identity Id="MatrixUltrA12.e1e706e2-05d3-4da9-8754-652cd8ab65f4" Version="1.0.0.0" Language="en-US" Publisher="UltrAFisH" />
-    <DisplayName> MatrixUltrAFishEdtion</DisplayName>
+    <DisplayName>MatrixUltrAFishEdtion</DisplayName>
     <Description xml:space="preserve">VSTheme project.
 
- Based on UstymUkhman's vs code theme.
-
-</Description>
+Based on UstymUkhman's VS Code theme.
+    </Description>
     <MoreInfo>https://github.com/SuperEgg9562/MatrixUltrAFishEdition</MoreInfo>
     <Icon>UltrAFishTecH_128x128.png</Icon>
     <PreviewImage>preview.png</PreviewImage>
     <Tags>Matrix,Green</Tags>
   </Metadata>
   <Installation>
-    <InstallationTarget Id="Microsoft.VisualStudio.Community" Version="[17.0, 18.0)">
+    <InstallationTarget Id="Microsoft.VisualStudio.Community" Version="[17.0,18.0)">
       <ProductArchitecture>amd64</ProductArchitecture>
     </InstallationTarget>
   </Installation>
@@ -25,8 +24,6 @@
   </Prerequisites>
   <Assets>
     <Asset Type="Microsoft.VisualStudio.VsPackage" Path="|%CurrentProject%;PkgdefProjectOutputGroup|" />
-  </Assets>
-  <Assets>
     <Asset Type="Microsoft.VisualStudio.VsixColorTheme" Path="MatrixUltrAFishEdition.vstheme" />
     <Asset Type="Microsoft.VisualStudio.VsPackage" Path="MatrixUltrA12.pkgdef" />
   </Assets>

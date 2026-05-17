@@ -111,8 +111,8 @@
   <Target Name="CleanThemeArtifacts" BeforeTargets="Build">
     <RemoveDir Directories="$(ProjectDir)obj" />
   </Target>
-  <PropertyGroup>
-  <Version>1.0.$([System.DateTime]::UtcNow.ToString('yy')).$([System.DateTime]::UtcNow.ToString('HHmm'))</Version>
+<PropertyGroup>
+  <Version>1.0.$([System.DateTime]::UtcNow.DayOfYear).$([System.DateTime]::UtcNow.ToString('HHmm'))</Version>
   <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
 </PropertyGroup>
 </Project>
