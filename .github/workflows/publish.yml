@@ -28,6 +28,7 @@ jobs:
         shell: pwsh
         run: |
           $v = "${{ steps.vsix_version.outputs.version }}"
+
           $url = "https://shields.io"
           Invoke-WebRequest -Uri $url -OutFile "version-badge.png" -UserAgent "Mozilla/5.0"
           echo "FINAL_VERSION=$v" >> $env:GITHUB_ENV
@@ -47,7 +48,6 @@ jobs:
           vsix-path: 'bin/Release/MatrixUltrA12.vsix'
           publish-manifest-path: 'publish-manifest.json' 
 
-
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
         with:
@@ -57,4 +57,4 @@ jobs:
           generate_release_notes: true
           make_latest: true
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

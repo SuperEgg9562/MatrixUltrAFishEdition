@@ -4,13 +4,12 @@ echo ===================================================
 echo   LAUNCHING AUTOMATED GIT DEPLOY ASSET SYNC
 echo ===================================================
 
-:: 1. Stage absolutely everything to clear out unstaged changes blocks
 echo Staging all repository adjustments...
 git add .
 git add -f bin/Release/MatrixUltrA12.vsix
 
 echo Committing deployment package to repository...
-git commit -m "release: post-build automated binary sync [skip ci]" || echo No local changes to commit.
+git commit -m "release: post-build automated binary sync v1.0.98" || echo No local changes to commit.
 
 echo Pulling latest changes from GitHub to synchronize histories...
 git pull origin main --rebase
