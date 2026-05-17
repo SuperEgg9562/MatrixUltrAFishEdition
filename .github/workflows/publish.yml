@@ -39,7 +39,7 @@ jobs:
         uses: dsaltares/fetch-gh-release-asset@master
         with:
           version: tags/${{ github.event.release.tag_name }}
-          file: "*.vsix"
+          file: 'bin/Release/MatrixUltrA12.vsix'
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Publish to Marketplace
