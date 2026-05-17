@@ -65,8 +65,8 @@ jobs:
             throw "VsixPublisher.exe not found: $vsixPublisher"
           }
 
-          $maxAttempts = 10
-          $waitSeconds = 90
+          $maxAttempts = 3
+          $waitSeconds = 30
 
           for ($attempt = 1; $attempt -le $maxAttempts; $attempt++) {
             Write-Host "Publish attempt $attempt of $maxAttempts"
