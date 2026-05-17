@@ -24,6 +24,13 @@ jobs:
           Invoke-WebRequest -Uri $url -OutFile "version-badge.png" -UserAgent "Mozilla/5.0"
           echo "FINAL_VERSION=$v" >> $env:GITHUB_ENV
 
+      - name: Get VSIX from release assets
+        uses: dsaltares/fetch-gh-release-asset@master
+        with:
+          version: tags/${{ github.event.release.tag_name }}
+          file: 'bin/Release/MatrixUltrA12.vsix'
+          token: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Commit and Push Changes
         run: |
           git config --local user.email "action@github.com"
@@ -34,13 +41,6 @@ jobs:
           git stash pop || echo "No stash to pop"
           git commit -m "chore: bump version to ${{ env.FINAL_VERSION }} [skip ci]" || echo "No changes"
           git push
-
-      - name: Get VSIX from release assets
-        uses: dsaltares/fetch-gh-release-asset@master
-        with:
-          version: tags/${{ github.event.release.tag_name }}
-          file: 'bin/Release/MatrixUltrA12.vsix'
-          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Publish to Marketplace
         uses: CodingWithCalvin/GHA-VSMarketplacePublisher@v2.0.0
