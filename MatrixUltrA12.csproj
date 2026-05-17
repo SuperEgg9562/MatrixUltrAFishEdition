@@ -117,7 +117,6 @@
     <XmlPoke XmlInputPath="$(ManifestFile)" Query="/ns:Vsix/ns:Identifier/ns:Version" Value="$([System.DateTime]::Now.ToString('1.0.yyMM.ddHH'))" Namespaces="&lt;Namespace Prefix='ns' Uri='microsoft.com' /&gt;" />
   </Target>
   <Target Name="CleanThemeArtifacts" BeforeTargets="Build">
-    <RemoveDir Directories="$(ProjectDir)bin" />
     <RemoveDir Directories="$(ProjectDir)obj" />
   </Target>
 </Project>
