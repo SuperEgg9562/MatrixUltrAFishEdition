@@ -5,7 +5,6 @@ on:
     branches:
       - main
 
-# Prevent two publish jobs from running at the same time
 concurrency:
   group: marketplace-publish
   cancel-in-progress: false
@@ -44,45 +43,58 @@ jobs:
           if (!(Test-Path "bin/Release/MatrixUltrA12.vsix")) {
             throw "VSIX file not found: bin/Release/MatrixUltrA12.vsix"
           }
-
       - name: Publish to Marketplace (with retry)
         shell: pwsh
         env:
           VS_PAT: ${{ secrets.VS_PUBLISHER_ACCESS_TOKEN }}
         run: |
-          $vsixPublisher = "${env:ProgramFiles}\Microsoft Visual Studio\2022\Enterprise\vssdk\VisualStudioIntegration\tools\bin\VsixPublisher.exe"
+          $vsPath = & "${env:ProgramFiles(x86)}\Microsoft Visual Studio\Installer\vswhere.exe" `
+            -latest `
+            -products * `
+            -requires Microsoft.Component.MSBuild `
+            -property installationPath
+
+          if ([string]::IsNullOrWhiteSpace($vsPath)) {
+            throw "Visual Studio installation not found."
+          }
+
+          $vsixPublisher = Join-Path $vsPath `
+            "VSSDK\VisualStudioIntegration\Tools\Bin\VsixPublisher.exe"
 
           if (!(Test-Path $vsixPublisher)) {
-          throw "VsixPublisher.exe not found: $vsixPublisher"
+            throw "VsixPublisher.exe not found: $vsixPublisher"
           }
 
           $maxAttempts = 10
           $waitSeconds = 90
 
           for ($attempt = 1; $attempt -le $maxAttempts; $attempt++) {
-          Write-Host "Publish attempt $attempt of $maxAttempts"
+            Write-Host "Publish attempt $attempt of $maxAttempts"
 
-          & $vsixPublisher `
-          publish `
-          -payload "bin/Release/MatrixUltrA12.vsix" `
-          -publishManifest "publish-manifest.json" `
-          -personalAccessToken $env:VS_PAT
+            & $vsixPublisher `
+              publish `
+              -payload "bin/Release/MatrixUltrA12.vsix" `
+              -publishManifest "publish-manifest.json" `
+              -personalAccessToken $env:VS_PAT
 
-          if ($LASTEXITCODE -eq 0) {
-          Write-Host "Marketplace publish succeeded."
-          exit 0
-          }
+            $exitCode = $LASTEXITCODE
 
-           if ($LASTEXITCODE -eq 29 -and $attempt -lt $maxAttempts) {
-           Write-Host "Marketplace is busy (VsixPub0029). Waiting $waitSeconds seconds before retry..."
-           Start-Sleep -Seconds $waitSeconds
-           continue
-           }
+            if ($exitCode -eq 0) {
+              Write-Host "Marketplace publish succeeded."
+              exit 0
+            }
 
-          throw "Marketplace publish failed with exit code $LASTEXITCODE"
+            if ($exitCode -eq 29 -and $attempt -lt $maxAttempts) {
+              Write-Host "Marketplace is busy (VsixPub0029). Waiting $waitSeconds seconds before retry..."
+              Start-Sleep -Seconds $waitSeconds
+              continue
+            }
+
+            throw "Marketplace publish failed with exit code $exitCode"
           }
 
           throw "Marketplace publish failed after $maxAttempts attempts."
+          
 
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
