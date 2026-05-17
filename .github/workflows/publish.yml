@@ -7,33 +7,13 @@ permissions:
   contents: write  
 
 jobs:
-  build-and-publish:
+  publish:
     runs-on: windows-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
         with:
           fetch-depth: 0 
-
-      - name: Setup MSBuild
-        uses: microsoft/setup-msbuild@v2
-
-      - name: Setup .NET SDK
-        uses: actions/setup-dotnet@v4
-        with:
-          dotnet-version: '9.0.x' 
-
-      - name: Increment VSIX Version
-        id: vsix_version
-        uses: timheuer/vsix-version-stamp@v2
-        with:
-          manifest-file: 'source.extension.vsixmanifest'
-
-      - name: Restore NuGet Packages
-        run: dotnet restore MatrixUltrA12.slnx -p:RuntimeIdentifier=win
-
-      - name: Build VSIX  
-        run: msbuild MatrixUltrA12.slnx /p:Configuration=Release /p:RuntimeIdentifier=win /p:DeployExtension=false /p:ZipPackageCompressionLevel=Normal
 
       - name: Generate Version Badge
         shell: pwsh
