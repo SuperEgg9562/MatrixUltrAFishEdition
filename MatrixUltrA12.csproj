@@ -79,6 +79,7 @@
       <IncludeInVSIX>true</IncludeInVSIX>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="bin\Release\MatrixUltrA12.vsix" />
     <None Include="publish-manifest.json" />
     <None Include="README.md" />
     <None Include="source.extension.vsixmanifest">
