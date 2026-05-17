@@ -32,6 +32,7 @@ jobs:
           }
 
           Add-Type -AssemblyName System.IO.Compression.FileSystem
+
           $zip = [System.IO.Compression.ZipFile]::OpenRead("bin/Release/MatrixUltrA12.vsix")
 
           try {
@@ -40,7 +41,7 @@ jobs:
               Select-Object -First 1
 
             if (-not $entry) {
-              throw "extension.vsixmanifest not found inside VSIX."
+              throw "extension.vsixmanifest not found inside the VSIX."
             }
 
             $reader = New-Object System.IO.StreamReader($entry.Open())
@@ -50,7 +51,7 @@ jobs:
             $version = $manifest.PackageManifest.Metadata.Identity.Version
 
             if ([string]::IsNullOrWhiteSpace($version)) {
-              throw "Could not read version from VSIX manifest."
+              throw "Could not read version from extension.vsixmanifest."
             }
 
             Write-Host "Detected VSIX version: $version"
