@@ -74,7 +74,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include=".github\workflows\publish.yml" />
-    <None Include="bin\Release\MatrixUltrA12.vsix" />
     <None Include="CustomTheme.vstheme">
       <SubType>Designer</SubType>
     </None>
@@ -85,309 +84,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="bin\Release\cs\Microsoft.ServiceHub.Framework.resources.dll" />
-    <Content Include="bin\Release\cs\Microsoft.ServiceHub.Resources.dll" />
-    <Content Include="bin\Release\cs\Microsoft.VisualStudio.Composition.resources.dll" />
-    <Content Include="bin\Release\cs\Microsoft.VisualStudio.GraphModel.resources.dll" />
-    <Content Include="bin\Release\cs\Microsoft.VisualStudio.Imaging.resources.dll" />
-    <Content Include="bin\Release\cs\Microsoft.VisualStudio.LanguageServer.Client.resources.dll" />
-    <Content Include="bin\Release\cs\Microsoft.VisualStudio.Package.LanguageService.15.0.resources.dll" />
-    <Content Include="bin\Release\cs\Microsoft.VisualStudio.Shell.15.0.resources.dll" />
-    <Content Include="bin\Release\cs\Microsoft.VisualStudio.Shell.Design.resources.dll" />
-    <Content Include="bin\Release\cs\Microsoft.VisualStudio.Shell.Framework.resources.dll" />
-    <Content Include="bin\Release\cs\Microsoft.VisualStudio.Threading.resources.dll" />
-    <Content Include="bin\Release\cs\Microsoft.VisualStudio.Utilities.resources.dll" />
-    <Content Include="bin\Release\cs\Microsoft.VisualStudio.Validation.resources.dll" />
-    <Content Include="bin\Release\cs\StreamJsonRpc.resources.dll" />
-    <Content Include="bin\Release\CustomTheme.pkgdef" />
-    <Content Include="bin\Release\de\Microsoft.ServiceHub.Framework.resources.dll" />
-    <Content Include="bin\Release\de\Microsoft.ServiceHub.Resources.dll" />
-    <Content Include="bin\Release\de\Microsoft.VisualStudio.Composition.resources.dll" />
-    <Content Include="bin\Release\de\Microsoft.VisualStudio.GraphModel.resources.dll" />
-    <Content Include="bin\Release\de\Microsoft.VisualStudio.Imaging.resources.dll" />
-    <Content Include="bin\Release\de\Microsoft.VisualStudio.LanguageServer.Client.resources.dll" />
-    <Content Include="bin\Release\de\Microsoft.VisualStudio.Package.LanguageService.15.0.resources.dll" />
-    <Content Include="bin\Release\de\Microsoft.VisualStudio.Shell.15.0.resources.dll" />
-    <Content Include="bin\Release\de\Microsoft.VisualStudio.Shell.Design.resources.dll" />
-    <Content Include="bin\Release\de\Microsoft.VisualStudio.Shell.Framework.resources.dll" />
-    <Content Include="bin\Release\de\Microsoft.VisualStudio.Threading.resources.dll" />
-    <Content Include="bin\Release\de\Microsoft.VisualStudio.Utilities.resources.dll" />
-    <Content Include="bin\Release\de\Microsoft.VisualStudio.Validation.resources.dll" />
-    <Content Include="bin\Release\de\StreamJsonRpc.resources.dll" />
-    <Content Include="bin\Release\envdte.dll" />
-    <Content Include="bin\Release\envdte100.dll" />
-    <Content Include="bin\Release\envdte80.dll" />
-    <Content Include="bin\Release\envdte90.dll" />
-    <Content Include="bin\Release\envdte90a.dll" />
-    <Content Include="bin\Release\en\Microsoft.VisualStudio.ImageCatalog.resources.dll" />
-    <Content Include="bin\Release\en\Microsoft.VisualStudio.Imaging.resources.dll" />
-    <Content Include="bin\Release\en\Microsoft.VisualStudio.Utilities.resources.dll" />
-    <Content Include="bin\Release\es\Microsoft.ServiceHub.Framework.resources.dll" />
-    <Content Include="bin\Release\es\Microsoft.ServiceHub.Resources.dll" />
-    <Content Include="bin\Release\es\Microsoft.VisualStudio.Composition.resources.dll" />
-    <Content Include="bin\Release\es\Microsoft.VisualStudio.GraphModel.resources.dll" />
-    <Content Include="bin\Release\es\Microsoft.VisualStudio.Imaging.resources.dll" />
-    <Content Include="bin\Release\es\Microsoft.VisualStudio.LanguageServer.Client.resources.dll" />
-    <Content Include="bin\Release\es\Microsoft.VisualStudio.Package.LanguageService.15.0.resources.dll" />
-    <Content Include="bin\Release\es\Microsoft.VisualStudio.Shell.15.0.resources.dll" />
-    <Content Include="bin\Release\es\Microsoft.VisualStudio.Shell.Design.resources.dll" />
-    <Content Include="bin\Release\es\Microsoft.VisualStudio.Shell.Framework.resources.dll" />
-    <Content Include="bin\Release\es\Microsoft.VisualStudio.Threading.resources.dll" />
-    <Content Include="bin\Release\es\Microsoft.VisualStudio.Utilities.resources.dll" />
-    <Content Include="bin\Release\es\Microsoft.VisualStudio.Validation.resources.dll" />
-    <Content Include="bin\Release\es\StreamJsonRpc.resources.dll" />
-    <Content Include="bin\Release\extension.vsixmanifest" />
-    <Content Include="bin\Release\fr\Microsoft.ServiceHub.Framework.resources.dll" />
-    <Content Include="bin\Release\fr\Microsoft.ServiceHub.Resources.dll" />
-    <Content Include="bin\Release\fr\Microsoft.VisualStudio.Composition.resources.dll" />
-    <Content Include="bin\Release\fr\Microsoft.VisualStudio.GraphModel.resources.dll" />
-    <Content Include="bin\Release\fr\Microsoft.VisualStudio.Imaging.resources.dll" />
-    <Content Include="bin\Release\fr\Microsoft.VisualStudio.LanguageServer.Client.resources.dll" />
-    <Content Include="bin\Release\fr\Microsoft.VisualStudio.Package.LanguageService.15.0.resources.dll" />
-    <Content Include="bin\Release\fr\Microsoft.VisualStudio.Shell.15.0.resources.dll" />
-    <Content Include="bin\Release\fr\Microsoft.VisualStudio.Shell.Design.resources.dll" />
-    <Content Include="bin\Release\fr\Microsoft.VisualStudio.Shell.Framework.resources.dll" />
-    <Content Include="bin\Release\fr\Microsoft.VisualStudio.Threading.resources.dll" />
-    <Content Include="bin\Release\fr\Microsoft.VisualStudio.Utilities.resources.dll" />
-    <Content Include="bin\Release\fr\Microsoft.VisualStudio.Validation.resources.dll" />
-    <Content Include="bin\Release\fr\StreamJsonRpc.resources.dll" />
-    <Content Include="bin\Release\it\Microsoft.ServiceHub.Framework.resources.dll" />
-    <Content Include="bin\Release\it\Microsoft.ServiceHub.Resources.dll" />
-    <Content Include="bin\Release\it\Microsoft.VisualStudio.Composition.resources.dll" />
-    <Content Include="bin\Release\it\Microsoft.VisualStudio.GraphModel.resources.dll" />
-    <Content Include="bin\Release\it\Microsoft.VisualStudio.Imaging.resources.dll" />
-    <Content Include="bin\Release\it\Microsoft.VisualStudio.LanguageServer.Client.resources.dll" />
-    <Content Include="bin\Release\it\Microsoft.VisualStudio.Package.LanguageService.15.0.resources.dll" />
-    <Content Include="bin\Release\it\Microsoft.VisualStudio.Shell.15.0.resources.dll" />
-    <Content Include="bin\Release\it\Microsoft.VisualStudio.Shell.Design.resources.dll" />
-    <Content Include="bin\Release\it\Microsoft.VisualStudio.Shell.Framework.resources.dll" />
-    <Content Include="bin\Release\it\Microsoft.VisualStudio.Threading.resources.dll" />
-    <Content Include="bin\Release\it\Microsoft.VisualStudio.Utilities.resources.dll" />
-    <Content Include="bin\Release\it\Microsoft.VisualStudio.Validation.resources.dll" />
-    <Content Include="bin\Release\it\StreamJsonRpc.resources.dll" />
-    <Content Include="bin\Release\ja\Microsoft.ServiceHub.Framework.resources.dll" />
-    <Content Include="bin\Release\ja\Microsoft.ServiceHub.Resources.dll" />
-    <Content Include="bin\Release\ja\Microsoft.VisualStudio.Composition.resources.dll" />
-    <Content Include="bin\Release\ja\Microsoft.VisualStudio.GraphModel.resources.dll" />
-    <Content Include="bin\Release\ja\Microsoft.VisualStudio.Imaging.resources.dll" />
-    <Content Include="bin\Release\ja\Microsoft.VisualStudio.LanguageServer.Client.resources.dll" />
-    <Content Include="bin\Release\ja\Microsoft.VisualStudio.Package.LanguageService.15.0.resources.dll" />
-    <Content Include="bin\Release\ja\Microsoft.VisualStudio.Shell.15.0.resources.dll" />
-    <Content Include="bin\Release\ja\Microsoft.VisualStudio.Shell.Design.resources.dll" />
-    <Content Include="bin\Release\ja\Microsoft.VisualStudio.Shell.Framework.resources.dll" />
-    <Content Include="bin\Release\ja\Microsoft.VisualStudio.Threading.resources.dll" />
-    <Content Include="bin\Release\ja\Microsoft.VisualStudio.Utilities.resources.dll" />
-    <Content Include="bin\Release\ja\Microsoft.VisualStudio.Validation.resources.dll" />
-    <Content Include="bin\Release\ja\StreamJsonRpc.resources.dll" />
-    <Content Include="bin\Release\ko\Microsoft.ServiceHub.Framework.resources.dll" />
-    <Content Include="bin\Release\ko\Microsoft.ServiceHub.Resources.dll" />
-    <Content Include="bin\Release\ko\Microsoft.VisualStudio.Composition.resources.dll" />
-    <Content Include="bin\Release\ko\Microsoft.VisualStudio.GraphModel.resources.dll" />
-    <Content Include="bin\Release\ko\Microsoft.VisualStudio.Imaging.resources.dll" />
-    <Content Include="bin\Release\ko\Microsoft.VisualStudio.LanguageServer.Client.resources.dll" />
-    <Content Include="bin\Release\ko\Microsoft.VisualStudio.Package.LanguageService.15.0.resources.dll" />
-    <Content Include="bin\Release\ko\Microsoft.VisualStudio.Shell.15.0.resources.dll" />
-    <Content Include="bin\Release\ko\Microsoft.VisualStudio.Shell.Design.resources.dll" />
-    <Content Include="bin\Release\ko\Microsoft.VisualStudio.Shell.Framework.resources.dll" />
-    <Content Include="bin\Release\ko\Microsoft.VisualStudio.Threading.resources.dll" />
-    <Content Include="bin\Release\ko\Microsoft.VisualStudio.Utilities.resources.dll" />
-    <Content Include="bin\Release\ko\Microsoft.VisualStudio.Validation.resources.dll" />
-    <Content Include="bin\Release\ko\StreamJsonRpc.resources.dll" />
-    <Content Include="bin\Release\MatrixUltrA12.dll" />
-    <Content Include="bin\Release\MatrixUltrA12.pdb" />
-    <Content Include="bin\Release\MessagePack.Annotations.dll" />
-    <Content Include="bin\Release\MessagePack.dll" />
-    <Content Include="bin\Release\Microsoft.Bcl.AsyncInterfaces.dll" />
-    <Content Include="bin\Release\Microsoft.Build.Framework.dll" />
-    <Content Include="bin\Release\Microsoft.Build.Framework.pdb" />
-    <Content Include="bin\Release\Microsoft.IO.Redist.dll" />
-    <Content Include="bin\Release\Microsoft.NET.StringTools.dll" />
-    <Content Include="bin\Release\Microsoft.NET.StringTools.pdb" />
-    <Content Include="bin\Release\Microsoft.ServiceHub.Framework.dll" />
-    <Content Include="bin\Release\Microsoft.ServiceHub.Resources.dll" />
-    <Content Include="bin\Release\Microsoft.VisualStudio.CommandBars.dll" />
-    <Content Include="bin\Release\Microsoft.VisualStudio.ComponentModelHost.dll" />
-    <Content Include="bin\Release\Microsoft.VisualStudio.Composition.dll" />
-    <Content Include="bin\Release\Microsoft.VisualStudio.CoreUtility.dll" />
-    <Content Include="bin\Release\Microsoft.VisualStudio.Debugger.Interop.10.0.dll" />
-    <Content Include="bin\Release\Microsoft.VisualStudio.Debugger.Interop.12.0.dll" />
-    <Content Include="bin\Release\Microsoft.VisualStudio.Debugger.Interop.14.0.dll" />
-    <Content Include="bin\Release\Microsoft.VisualStudio.Debugger.Interop.15.0.dll" />
-    <Content Include="bin\Release\Microsoft.VisualStudio.Debugger.Interop.16.0.dll" />
-    <Content Include="bin\Release\Microsoft.VisualStudio.Debugger.InteropA.dll" />
-    <Content Include="bin\Release\Microsoft.VisualStudio.Designer.Interfaces.dll" />
-    <Content Include="bin\Release\Microsoft.VisualStudio.Editor.dll" />
-    <Content Include="bin\Release\Microsoft.VisualStudio.Extensibility.Editor.Contracts.dll" />
-    <Content Include="bin\Release\Microsoft.VisualStudio.GraphModel.dll" />
-    <Content Include="bin\Release\Microsoft.VisualStudio.ImageCatalog.dll" />
-    <Content Include="bin\Release\Microsoft.VisualStudio.Imaging.dll" />
-    <Content Include="bin\Release\Microsoft.VisualStudio.Imaging.Interop.14.0.DesignTime.dll" />
-    <Content Include="bin\Release\Microsoft.VisualStudio.Interop.dll" />
-    <Content Include="bin\Release\Microsoft.VisualStudio.Language.dll" />
-    <Content Include="bin\Release\Microsoft.VisualStudio.Language.Intellisense.dll" />
-    <Content Include="bin\Release\Microsoft.VisualStudio.Language.NavigateTo.Interfaces.dll" />
-    <Content Include="bin\Release\Microsoft.VisualStudio.Language.StandardClassification.dll" />
-    <Content Include="bin\Release\Microsoft.VisualStudio.LanguageServer.Client.dll" />
-    <Content Include="bin\Release\Microsoft.VisualStudio.Linux.ConnectionManager.Store.dll" />
-    <Content Include="bin\Release\Microsoft.VisualStudio.OLE.Interop.dll" />
-    <Content Include="bin\Release\Microsoft.VisualStudio.Package.LanguageService.15.0.dll" />
-    <Content Include="bin\Release\Microsoft.VisualStudio.ProjectAggregator.dll" />
-    <Content Include="bin\Release\Microsoft.VisualStudio.RemoteControl.dll" />
-    <Content Include="bin\Release\Microsoft.VisualStudio.RpcContracts.dll" />
-    <Content Include="bin\Release\Microsoft.VisualStudio.Setup.Configuration.Interop.dll" />
-    <Content Include="bin\Release\Microsoft.VisualStudio.Shell.15.0.dll" />
-    <Content Include="bin\Release\Microsoft.VisualStudio.Shell.Design.dll" />
-    <Content Include="bin\Release\Microsoft.VisualStudio.Shell.Framework.dll" />
-    <Content Include="bin\Release\Microsoft.VisualStudio.Shell.Interop.10.0.dll" />
-    <Content Include="bin\Release\Microsoft.VisualStudio.Shell.Interop.11.0.dll" />
-    <Content Include="bin\Release\Microsoft.VisualStudio.Shell.Interop.12.0.dll" />
-    <Content Include="bin\Release\Microsoft.VisualStudio.Shell.Interop.8.0.dll" />
-    <Content Include="bin\Release\Microsoft.VisualStudio.Shell.Interop.9.0.dll" />
-    <Content Include="bin\Release\Microsoft.VisualStudio.Shell.Interop.dll" />
-    <Content Include="bin\Release\Microsoft.VisualStudio.TaskRunnerExplorer.14.0.dll" />
-    <Content Include="bin\Release\Microsoft.VisualStudio.Telemetry.dll" />
-    <Content Include="bin\Release\Microsoft.VisualStudio.Text.Data.dll" />
-    <Content Include="bin\Release\Microsoft.VisualStudio.Text.Logic.dll" />
-    <Content Include="bin\Release\Microsoft.VisualStudio.Text.UI.dll" />
-    <Content Include="bin\Release\Microsoft.VisualStudio.Text.UI.Wpf.dll" />
-    <Content Include="bin\Release\Microsoft.VisualStudio.TextManager.Interop.10.0.dll" />
-    <Content Include="bin\Release\Microsoft.VisualStudio.TextManager.Interop.11.0.dll" />
-    <Content Include="bin\Release\Microsoft.VisualStudio.TextManager.Interop.12.0.dll" />
-    <Content Include="bin\Release\Microsoft.VisualStudio.TextManager.Interop.8.0.dll" />
-    <Content Include="bin\Release\Microsoft.VisualStudio.TextManager.Interop.9.0.dll" />
-    <Content Include="bin\Release\Microsoft.VisualStudio.TextManager.Interop.dll" />
-    <Content Include="bin\Release\Microsoft.VisualStudio.TextTemplating.VSHost.dll" />
-    <Content Include="bin\Release\Microsoft.VisualStudio.Threading.dll" />
-    <Content Include="bin\Release\Microsoft.VisualStudio.Utilities.dll" />
-    <Content Include="bin\Release\Microsoft.VisualStudio.Utilities.Internal.dll" />
-    <Content Include="bin\Release\Microsoft.VisualStudio.Validation.dll" />
-    <Content Include="bin\Release\Microsoft.VisualStudio.VCProjectEngine.dll" />
-    <Content Include="bin\Release\Microsoft.VisualStudio.VSHelp.dll" />
-    <Content Include="bin\Release\Microsoft.VisualStudio.VSHelp80.dll" />
-    <Content Include="bin\Release\Microsoft.VisualStudio.WCFReference.Interop.dll" />
-    <Content Include="bin\Release\Microsoft.VisualStudio.Web.BrowserLink.12.0.dll" />
-    <Content Include="bin\Release\Microsoft.Win32.Registry.dll" />
-    <Content Include="bin\Release\Nerdbank.Streams.dll" />
-    <Content Include="bin\Release\Newtonsoft.Json.dll" />
-    <Content Include="bin\Release\pl\Microsoft.ServiceHub.Framework.resources.dll" />
-    <Content Include="bin\Release\pl\Microsoft.ServiceHub.Resources.dll" />
-    <Content Include="bin\Release\pl\Microsoft.VisualStudio.Composition.resources.dll" />
-    <Content Include="bin\Release\pl\Microsoft.VisualStudio.GraphModel.resources.dll" />
-    <Content Include="bin\Release\pl\Microsoft.VisualStudio.Imaging.resources.dll" />
-    <Content Include="bin\Release\pl\Microsoft.VisualStudio.LanguageServer.Client.resources.dll" />
-    <Content Include="bin\Release\pl\Microsoft.VisualStudio.Package.LanguageService.15.0.resources.dll" />
-    <Content Include="bin\Release\pl\Microsoft.VisualStudio.Shell.15.0.resources.dll" />
-    <Content Include="bin\Release\pl\Microsoft.VisualStudio.Shell.Design.resources.dll" />
-    <Content Include="bin\Release\pl\Microsoft.VisualStudio.Shell.Framework.resources.dll" />
-    <Content Include="bin\Release\pl\Microsoft.VisualStudio.Threading.resources.dll" />
-    <Content Include="bin\Release\pl\Microsoft.VisualStudio.Utilities.resources.dll" />
-    <Content Include="bin\Release\pl\Microsoft.VisualStudio.Validation.resources.dll" />
-    <Content Include="bin\Release\pl\StreamJsonRpc.resources.dll" />
-    <Content Include="bin\Release\pt-BR\Microsoft.ServiceHub.Framework.resources.dll" />
-    <Content Include="bin\Release\pt-BR\Microsoft.ServiceHub.Resources.dll" />
-    <Content Include="bin\Release\pt-BR\Microsoft.VisualStudio.Composition.resources.dll" />
-    <Content Include="bin\Release\pt-BR\Microsoft.VisualStudio.GraphModel.resources.dll" />
-    <Content Include="bin\Release\pt-BR\Microsoft.VisualStudio.Imaging.resources.dll" />
-    <Content Include="bin\Release\pt-BR\Microsoft.VisualStudio.LanguageServer.Client.resources.dll" />
-    <Content Include="bin\Release\pt-BR\Microsoft.VisualStudio.Package.LanguageService.15.0.resources.dll" />
-    <Content Include="bin\Release\pt-BR\Microsoft.VisualStudio.Shell.15.0.resources.dll" />
-    <Content Include="bin\Release\pt-BR\Microsoft.VisualStudio.Shell.Design.resources.dll" />
-    <Content Include="bin\Release\pt-BR\Microsoft.VisualStudio.Shell.Framework.resources.dll" />
-    <Content Include="bin\Release\pt-BR\Microsoft.VisualStudio.Threading.resources.dll" />
-    <Content Include="bin\Release\pt-BR\Microsoft.VisualStudio.Utilities.resources.dll" />
-    <Content Include="bin\Release\pt-BR\Microsoft.VisualStudio.Validation.resources.dll" />
-    <Content Include="bin\Release\pt-BR\StreamJsonRpc.resources.dll" />
-    <Content Include="bin\Release\ru\Microsoft.ServiceHub.Framework.resources.dll" />
-    <Content Include="bin\Release\ru\Microsoft.ServiceHub.Resources.dll" />
-    <Content Include="bin\Release\ru\Microsoft.VisualStudio.Composition.resources.dll" />
-    <Content Include="bin\Release\ru\Microsoft.VisualStudio.GraphModel.resources.dll" />
-    <Content Include="bin\Release\ru\Microsoft.VisualStudio.Imaging.resources.dll" />
-    <Content Include="bin\Release\ru\Microsoft.VisualStudio.LanguageServer.Client.resources.dll" />
-    <Content Include="bin\Release\ru\Microsoft.VisualStudio.Package.LanguageService.15.0.resources.dll" />
-    <Content Include="bin\Release\ru\Microsoft.VisualStudio.Shell.15.0.resources.dll" />
-    <Content Include="bin\Release\ru\Microsoft.VisualStudio.Shell.Design.resources.dll" />
-    <Content Include="bin\Release\ru\Microsoft.VisualStudio.Shell.Framework.resources.dll" />
-    <Content Include="bin\Release\ru\Microsoft.VisualStudio.Threading.resources.dll" />
-    <Content Include="bin\Release\ru\Microsoft.VisualStudio.Utilities.resources.dll" />
-    <Content Include="bin\Release\ru\Microsoft.VisualStudio.Validation.resources.dll" />
-    <Content Include="bin\Release\ru\StreamJsonRpc.resources.dll" />
-    <Content Include="bin\Release\stdole.dll" />
-    <Content Include="bin\Release\StreamJsonRpc.dll" />
-    <Content Include="bin\Release\System.Buffers.dll" />
-    <Content Include="bin\Release\System.Collections.Immutable.dll" />
-    <Content Include="bin\Release\System.Composition.AttributedModel.dll" />
-    <Content Include="bin\Release\System.Composition.Convention.dll" />
-    <Content Include="bin\Release\System.Composition.Hosting.dll" />
-    <Content Include="bin\Release\System.Composition.Runtime.dll" />
-    <Content Include="bin\Release\System.Composition.TypedParts.dll" />
-    <Content Include="bin\Release\System.Diagnostics.DiagnosticSource.dll" />
-    <Content Include="bin\Release\System.IO.Pipelines.dll" />
-    <Content Include="bin\Release\System.Memory.dll" />
-    <Content Include="bin\Release\System.Numerics.Vectors.dll" />
-    <Content Include="bin\Release\System.Reflection.Metadata.dll" />
-    <Content Include="bin\Release\System.Runtime.CompilerServices.Unsafe.dll" />
-    <Content Include="bin\Release\System.Security.AccessControl.dll" />
-    <Content Include="bin\Release\System.Security.Principal.Windows.dll" />
-    <Content Include="bin\Release\System.Text.Encodings.Web.dll" />
-    <Content Include="bin\Release\System.Text.Json.dll" />
-    <Content Include="bin\Release\System.Threading.AccessControl.dll" />
-    <Content Include="bin\Release\System.Threading.Tasks.Dataflow.dll" />
-    <Content Include="bin\Release\System.Threading.Tasks.Extensions.dll" />
-    <Content Include="bin\Release\System.ValueTuple.dll" />
-    <Content Include="bin\Release\tr\Microsoft.ServiceHub.Framework.resources.dll" />
-    <Content Include="bin\Release\tr\Microsoft.ServiceHub.Resources.dll" />
-    <Content Include="bin\Release\tr\Microsoft.VisualStudio.Composition.resources.dll" />
-    <Content Include="bin\Release\tr\Microsoft.VisualStudio.GraphModel.resources.dll" />
-    <Content Include="bin\Release\tr\Microsoft.VisualStudio.Imaging.resources.dll" />
-    <Content Include="bin\Release\tr\Microsoft.VisualStudio.LanguageServer.Client.resources.dll" />
-    <Content Include="bin\Release\tr\Microsoft.VisualStudio.Package.LanguageService.15.0.resources.dll" />
-    <Content Include="bin\Release\tr\Microsoft.VisualStudio.Shell.15.0.resources.dll" />
-    <Content Include="bin\Release\tr\Microsoft.VisualStudio.Shell.Design.resources.dll" />
-    <Content Include="bin\Release\tr\Microsoft.VisualStudio.Shell.Framework.resources.dll" />
-    <Content Include="bin\Release\tr\Microsoft.VisualStudio.Threading.resources.dll" />
-    <Content Include="bin\Release\tr\Microsoft.VisualStudio.Utilities.resources.dll" />
-    <Content Include="bin\Release\tr\Microsoft.VisualStudio.Validation.resources.dll" />
-    <Content Include="bin\Release\tr\StreamJsonRpc.resources.dll" />
-    <Content Include="bin\Release\UltrAFishTecH_128x128.png" />
-    <Content Include="bin\Release\VSLangProj.dll" />
-    <Content Include="bin\Release\VSLangProj100.dll" />
-    <Content Include="bin\Release\VSLangProj110.dll" />
-    <Content Include="bin\Release\VSLangProj140.dll" />
-    <Content Include="bin\Release\VSLangProj150.dll" />
-    <Content Include="bin\Release\VSLangProj157.dll" />
-    <Content Include="bin\Release\VSLangProj158.dll" />
-    <Content Include="bin\Release\VSLangProj165.dll" />
-    <Content Include="bin\Release\VSLangProj2.dll" />
-    <Content Include="bin\Release\VSLangProj80.dll" />
-    <Content Include="bin\Release\VSLangProj90.dll" />
-    <Content Include="bin\Release\zh-Hans\Microsoft.ServiceHub.Framework.resources.dll" />
-    <Content Include="bin\Release\zh-Hans\Microsoft.ServiceHub.Resources.dll" />
-    <Content Include="bin\Release\zh-Hans\Microsoft.VisualStudio.Composition.resources.dll" />
-    <Content Include="bin\Release\zh-Hans\Microsoft.VisualStudio.GraphModel.resources.dll" />
-    <Content Include="bin\Release\zh-Hans\Microsoft.VisualStudio.Imaging.resources.dll" />
-    <Content Include="bin\Release\zh-Hans\Microsoft.VisualStudio.LanguageServer.Client.resources.dll" />
-    <Content Include="bin\Release\zh-Hans\Microsoft.VisualStudio.Package.LanguageService.15.0.resources.dll" />
-    <Content Include="bin\Release\zh-Hans\Microsoft.VisualStudio.Shell.15.0.resources.dll" />
-    <Content Include="bin\Release\zh-Hans\Microsoft.VisualStudio.Shell.Design.resources.dll" />
-    <Content Include="bin\Release\zh-Hans\Microsoft.VisualStudio.Shell.Framework.resources.dll" />
-    <Content Include="bin\Release\zh-Hans\Microsoft.VisualStudio.Threading.resources.dll" />
-    <Content Include="bin\Release\zh-Hans\Microsoft.VisualStudio.Utilities.resources.dll" />
-    <Content Include="bin\Release\zh-Hans\Microsoft.VisualStudio.Validation.resources.dll" />
-    <Content Include="bin\Release\zh-Hans\StreamJsonRpc.resources.dll" />
-    <Content Include="bin\Release\zh-Hant\Microsoft.ServiceHub.Framework.resources.dll" />
-    <Content Include="bin\Release\zh-Hant\Microsoft.ServiceHub.Resources.dll" />
-    <Content Include="bin\Release\zh-Hant\Microsoft.VisualStudio.Composition.resources.dll" />
-    <Content Include="bin\Release\zh-Hant\Microsoft.VisualStudio.GraphModel.resources.dll" />
-    <Content Include="bin\Release\zh-Hant\Microsoft.VisualStudio.Imaging.resources.dll" />
-    <Content Include="bin\Release\zh-Hant\Microsoft.VisualStudio.LanguageServer.Client.resources.dll" />
-    <Content Include="bin\Release\zh-Hant\Microsoft.VisualStudio.Package.LanguageService.15.0.resources.dll" />
-    <Content Include="bin\Release\zh-Hant\Microsoft.VisualStudio.Shell.15.0.resources.dll" />
-    <Content Include="bin\Release\zh-Hant\Microsoft.VisualStudio.Shell.Design.resources.dll" />
-    <Content Include="bin\Release\zh-Hant\Microsoft.VisualStudio.Shell.Framework.resources.dll" />
-    <Content Include="bin\Release\zh-Hant\Microsoft.VisualStudio.Threading.resources.dll" />
-    <Content Include="bin\Release\zh-Hant\Microsoft.VisualStudio.Utilities.resources.dll" />
-    <Content Include="bin\Release\zh-Hant\Microsoft.VisualStudio.Validation.resources.dll" />
-    <Content Include="bin\Release\zh-Hant\StreamJsonRpc.resources.dll" />
     <Content Include="preview.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
@@ -407,16 +103,23 @@
     <PackageReference Include="Microsoft.VisualStudio.SDK" Version="17.14.40265" />
     <PackageReference Include="Microsoft.VisualStudio.VsixColorCompiler" Version="17.11.35325.10" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(VSToolsPath)\VSSDK\Microsoft.VsSDK.targets" Condition="'$(VSToolsPath)' != ''" />
-	<Target Name="AutoIncrementVsixVersion" BeforeTargets="PrepareForBuild">
-		<PropertyGroup>
-			<ManifestFile>source.extension.vsixmanifest</ManifestFile>
-		</PropertyGroup>
-		<Message Text="Updating VSIX Version Number..." Importance="high" />
-		<XmlPoke XmlInputPath="$(ManifestFile)"
-				 Query="/ns:Vsix/ns:Identifier/ns:Version"
-				 Value="$([System.DateTime]::Now.ToString('1.0.yyMM.ddHH'))"
-				 Namespaces="&lt;Namespace Prefix='ns' Uri='microsoft.com' /&gt;" />
-	</Target>
+  <Target Name="AutoIncrementVsixVersion" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ManifestFile>source.extension.vsixmanifest</ManifestFile>
+    </PropertyGroup>
+    <Message Text="Updating VSIX Version Number..." Importance="high" />
+    <XmlPoke XmlInputPath="$(ManifestFile)" Query="/ns:Vsix/ns:Identifier/ns:Version" Value="$([System.DateTime]::Now.ToString('1.0.yyMM.ddHH'))" Namespaces="&lt;Namespace Prefix='ns' Uri='microsoft.com' /&gt;" />
+  </Target>
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+  </PropertyGroup>
+  <Target Name="CleanThemeArtifacts" BeforeTargets="Build">
+    <Message Text="Cleaning old theme build artifacts..." Importance="high" />
+    <RemoveDir Directories="$(ProjectDir)bin" />
+    <RemoveDir Directories="$(ProjectDir)obj" />
+  </Target>
 </Project>
