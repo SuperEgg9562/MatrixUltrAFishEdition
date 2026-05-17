@@ -28,7 +28,9 @@ bld/
 [Ll]og/
 [Ll]ogs/
 [Rr]elease/
-!bin/Release/MatrixUltrA12.vsix
+bin/
+obj/
+
 
 # Visual Studio 2015/2017 cache/options directory
 .vs/
@@ -93,6 +95,7 @@ StyleCopReport.xml
 *.pidb
 *.svclog
 *.scc
+*.vsix
 
 # Chutzpah Test files
 _Chutzpah*
