@@ -4,11 +4,9 @@ echo ===================================================
 echo   LAUNCHING AUTOMATED RE-VERSION AND GIT DEPLOY
 echo ===================================================
 
-echo Incrementing VSIX manifest version number...
-powershell -NonInteractive -Command "& { [xml]$m = Get-Content source.extension.vsixmanifest; $v = [version]$m.PackageManifest.Metadata.Identity.Version; $n = '{0}.{1}.{2}' -f $v.Major, $v.Minor, ($v.Build + 1); $m.PackageManifest.Metadata.Identity.Version = $n; $m.Save('source.extension.vsixmanifest'); Write-Host 'Successfully bumped manifest to:' $n -ForegroundColor Green }"
-
 echo Staging updated version and VSIX bundle...
-git add source.extension.vsixmanifest bin/Release/MatrixUltrA12.vsix MatrixUltrAFishEdition.vstheme MatrixUltrA12.csproj
+git add source.extension.vsixmanifest MatrixUltrAFishEdition.vstheme MatrixUltrA12.csproj
+git add -f bin/Release/MatrixUltrA12.vsix
 
 echo Committing deployment package to repository...
 git commit -m "release: post-build automated version bump and binary sync [skip ci]"
