@@ -13,7 +13,8 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0 
+          fetch-depth: 0
+          clean: true 
 
       - name: Get VSIX Version
         id: vsix_version
@@ -27,20 +28,17 @@ jobs:
         shell: pwsh
         run: |
           $v = "${{ steps.vsix_version.outputs.version }}"
-          $url = "https://img.shields.io/badge/version-$v-00FF00"
+          $url = "https://shields.io"
           Invoke-WebRequest -Uri $url -OutFile "version-badge.png" -UserAgent "Mozilla/5.0"
           echo "FINAL_VERSION=$v" >> $env:GITHUB_ENV
 
-      - name: Commit and Push Changes
+      - name: Sync Badge Asset
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"     
-          git add source.extension.vsixmanifest version-badge.png
-          git stash
-          git pull origin main --rebase
-          git stash pop || echo "No stash to pop"
-          git commit -m "chore: bump version to ${{ steps.vsix_version.outputs.version }} [skip ci]" || echo "No changes"
-          git push
+          git add version-badge.png
+          git commit -m "chore: update release version badge asset [skip ci]" || echo "No changes"
+          git push origin main
 
       - name: Publish to Marketplace
         uses: CodingWithCalvin/GHA-VSMarketplacePublisher@v2.0.0
@@ -48,6 +46,7 @@ jobs:
           marketplace-pat: ${{ secrets.VS_PUBLISHER_ACCESS_TOKEN }}
           vsix-path: 'bin/Release/MatrixUltrA12.vsix'
           publish-manifest-path: 'publish-manifest.json' 
+
 
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
