@@ -111,14 +111,14 @@
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(VSToolsPath)\VSSDK\Microsoft.VsSDK.targets" Condition="'$(VSToolsPath)' != ''" />
 	<Target Name="AutoIncrementVersion" BeforeTargets="PrepareForBuild" Condition="'$(Configuration)' == 'Release'">
-		<Message Text="Wiping obj directory and auto-incrementing version string cleanly..." Importance="high" />
+		<Message Text="Wiping obj directory to refresh theme assets..." Importance="high" />
 		<RemoveDir Directories="$(ProjectDir)obj" />
 	</Target>
 	<Target Name="CleanThemeArtifacts" BeforeTargets="Build">
 		<RemoveDir Directories="$(ProjectDir)obj" />
 	</Target>
 	<Target Name="PostBuildDeployPipeline" AfterTargets="Build" Condition="'$(Configuration)' == 'Release'">
-		<Message Text="Launching automated push workflow..." Importance="high" />
+		<Message Text="Launching automated version incrementing and push workflow..." Importance="high" />
 		<Exec Command="cmd.exe /c git-push.bat" />
 	</Target>
 </Project>
