@@ -4,6 +4,7 @@ echo ===================================================
 echo   LAUNCHING AUTOMATED GIT DEPLOY ASSET SYNC
 echo ===================================================
 
+:: 1. Stage absolutely everything to clear out unstaged changes blocks
 echo Staging all repository adjustments...
 git add .
 git add -f bin/Release/MatrixUltrA12.vsix
