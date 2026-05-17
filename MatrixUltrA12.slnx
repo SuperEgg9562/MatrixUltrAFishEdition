@@ -2,10 +2,12 @@
   <Configurations>
     <Platform Name="Any CPU" />
     <Platform Name="arm64" />
+    <Platform Name="x64" />
     <Platform Name="x86" />
   </Configurations>
   <Project Path="MatrixUltrA12.csproj" Id="1032ad2d-3829-4991-a72c-312469ade0be">
     <Platform Solution="*|arm64" Project="arm64" />
+    <Platform Solution="*|x64" Project="x64" />
     <Platform Solution="*|x86" Project="x86" />
   </Project>
 </Solution>
