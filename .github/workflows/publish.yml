@@ -27,15 +27,40 @@ jobs:
         id: vsix_version
         shell: pwsh
         run: |
-          [xml]$manifest = Get-Content "source.extension.vsixmanifest"
-          $version = $manifest.PackageManifest.Metadata.Identity.Version
-
-          if ([string]::IsNullOrWhiteSpace($version)) {
-            throw "Could not read version from source.extension.vsixmanifest"
+          if (!(Test-Path "bin/Release/MatrixUltrA12.vsix")) {
+            throw "VSIX file not found: bin/Release/MatrixUltrA12.vsix"
           }
 
-          echo "version=$version" >> $env:GITHUB_OUTPUT
-          echo "FINAL_VERSION=$version" >> $env:GITHUB_ENV
+          Add-Type -AssemblyName System.IO.Compression.FileSystem
+          $zip = [System.IO.Compression.ZipFile]::OpenRead("bin/Release/MatrixUltrA12.vsix")
+
+          try {
+            $entry = $zip.Entries |
+              Where-Object { $_.FullName -eq "extension.vsixmanifest" } |
+              Select-Object -First 1
+
+            if (-not $entry) {
+              throw "extension.vsixmanifest not found inside VSIX."
+            }
+
+            $reader = New-Object System.IO.StreamReader($entry.Open())
+            [xml]$manifest = $reader.ReadToEnd()
+            $reader.Close()
+
+            $version = $manifest.PackageManifest.Metadata.Identity.Version
+
+            if ([string]::IsNullOrWhiteSpace($version)) {
+              throw "Could not read version from VSIX manifest."
+            }
+
+            Write-Host "Detected VSIX version: $version"
+
+            echo "version=$version" >> $env:GITHUB_OUTPUT
+            echo "FINAL_VERSION=$version" >> $env:GITHUB_ENV
+          }
+          finally {
+            $zip.Dispose()
+          }
 
       - name: Verify VSIX Exists
         shell: pwsh
@@ -43,6 +68,7 @@ jobs:
           if (!(Test-Path "bin/Release/MatrixUltrA12.vsix")) {
             throw "VSIX file not found: bin/Release/MatrixUltrA12.vsix"
           }
+
       - name: Publish to Marketplace (with retry)
         shell: pwsh
         env:
@@ -81,7 +107,7 @@ jobs:
 
             if ($exitCode -eq 0) {
               Write-Host "Marketplace publish succeeded."
-              exit 0
+              break
             }
 
             if ($exitCode -eq 29 -and $attempt -lt $maxAttempts) {
@@ -93,9 +119,6 @@ jobs:
             throw "Marketplace publish failed with exit code $exitCode"
           }
 
-          throw "Marketplace publish failed after $maxAttempts attempts."
-          
-
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
         with:
@@ -105,4 +128,4 @@ jobs:
           generate_release_notes: true
           make_latest: true
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}KEN }}
