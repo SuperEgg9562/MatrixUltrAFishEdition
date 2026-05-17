@@ -115,15 +115,8 @@
   <Target Name="CleanThemeArtifacts" BeforeTargets="Build">
     <RemoveDir Directories="$(ProjectDir)obj" />
   </Target>
-  <Target Name="AutoIncrementVersion" BeforeTargets="PrepareForBuild" Condition="'$(Configuration)' == 'Release'">
-    <Message Text="Wiping obj directory and auto-incrementing version string cleanly..." Importance="high" />
-    <RemoveDir Directories="$(ProjectDir)obj" />  
-    <Exec Command="powershell.exe -NonInteractive -ExecutionPolicy Bypass -File &quot;$(ProjectDir)update-version.ps1&quot;" />
-  </Target>
-  <Target Name="PostBuildDeployPipeline" AfterTargets="Build" Condition="'$(Configuration)' == 'Release'">
-    <Message Text="Launching automated Git push asset sync workflow..." Importance="high" />
-    <Exec Command="cmd.exe /c git-push.bat" />
-  </Target>
+	<PropertyGroup>
+    <Version>1.0.$([System.DateTime]::UtcNow.ToString('yy')).$([System.DateTime]::UtcNow.ToString('HHmm'))</Version>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+</PropertyGroup>
 </Project>
-
-
