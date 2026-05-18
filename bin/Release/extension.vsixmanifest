@@ -1,7 +1,7 @@
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011">
   <Metadata>
-    <Identity Id="MatrixUltrA12.e1e706e2-05d3-4da9-8754-652cd8ab65f4" Version="1.0.0.0" Language="en-US" Publisher="UltrAFisH" />
-    <DisplayName>MatrixUltrAFishEdtion</DisplayName>
+    <Identity Id="MatrixUltrA12.e1e706e2-05d3-4da9-8754-652cd8ab65f4" Version="1.1.6" Language="en-US" Publisher="UltrAFisH" />
+    <DisplayName>MatrixUltrAFishEdition</DisplayName>
     <Description xml:space="preserve">VSTheme project.
     Based on UstymUkhman's VS Code theme.
     </Description>
@@ -14,16 +14,19 @@
     <InstallationTarget Id="Microsoft.VisualStudio.Community" Version="[17.0,18.0)">
       <ProductArchitecture>amd64</ProductArchitecture>
     </InstallationTarget>
+    <InstallationTarget Id="Microsoft.VisualStudio.Community" Version="[18.0,19.0)">
+      <ProductArchitecture>amd64</ProductArchitecture>
+    </InstallationTarget>
   </Installation>
   <Dependencies>
     <Dependency Id="Microsoft.Framework.NDP" DisplayName="Microsoft .NET Framework" Version="[4.5,)" />
   </Dependencies>
   <Prerequisites>
-    <Prerequisite Id="Microsoft.VisualStudio.Component.CoreEditor" DisplayName="Visual Studio core editor" Version="[17.0,18.0)" />
+    <Prerequisite Id="Microsoft.VisualStudio.Component.CoreEditor" DisplayName="Visual Studio core editor" Version="[17.0,19.0)" />
   </Prerequisites>
   <Assets>
     <Asset Type="Microsoft.VisualStudio.VsPackage" Path="|%CurrentProject%;PkgdefProjectOutputGroup|" />
     <Asset Type="Microsoft.VisualStudio.VsixColorTheme" Path="MatrixUltrAFishEdition.vstheme" />
-    <Asset Type="Microsoft.VisualStudio.VsPackage" Path="MatrixUltrA12.pkgdef" />
+    <Asset Type="Microsoft.VisualStudio.VsPackage" Path="MatrixUltrAFishEdition.pkgdef" />
   </Assets>
 </PackageManifest>

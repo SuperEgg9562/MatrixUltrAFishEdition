@@ -70,6 +70,15 @@ jobs:
             throw "VSIX file not found: bin/Release/MatrixUltrA12.vsix"
           }
 
+      - name: Verify VSIX Version Is New
+        shell: pwsh
+        run: |
+          $tagName = "v${{ env.FINAL_VERSION }}"
+
+          if (git rev-parse -q --verify "refs/tags/$tagName") {
+            throw "Version ${{ env.FINAL_VERSION }} is already tagged as $tagName. Rebuild the VSIX with a newer version before publishing."
+          }
+
       - name: Publish to Marketplace (with retry)
         shell: pwsh
         env:
@@ -129,4 +138,4 @@ jobs:
           generate_release_notes: true
           make_latest: true
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}KEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
