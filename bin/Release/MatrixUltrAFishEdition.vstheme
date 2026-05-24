@@ -1,5 +1,5 @@
 ﻿<Themes>
-  <Theme Name="MatrixUltrA12 (10)" GUID="{446a871c-a21b-4b1f-a279-8d2fd5059b8d}" BaseGUID="{f0f1f93f-718b-4cc0-93e9-5cbbc2ce6912}">
+  <Theme Name="MatrixUltrAFishEdition" GUID="{ce51b9f5-fff7-4506-a10f-a6b02644a2b0}" BaseGUID="{f0f1f93f-718b-4cc0-93e9-5cbbc2ce6912}">
     <Category Name="ACDCOverview" GUID="{c8887ac6-3c60-4209-9d69-8f4c12a60044}">
       <Color Name="Body">
         <Background Type="CT_RAW" Source="FF0C0C0C" />
