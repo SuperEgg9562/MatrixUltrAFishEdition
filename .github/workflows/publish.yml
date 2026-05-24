@@ -114,6 +114,52 @@ jobs:
             throw "Version ${{ env.FINAL_VERSION }} is already tagged as $tagName. Rebuild the VSIX with a newer version before publishing."
           }
 
+      - name: Verify VSIX Version Is Newer Than Marketplace
+        shell: pwsh
+        run: |
+          $publishManifest = Get-Content -LiteralPath "publish-manifest.json" -Raw | ConvertFrom-Json
+          $publisher = $publishManifest.publisher
+          $extensionName = $publishManifest.identity.internalName
+          $itemName = "$publisher.$extensionName"
+
+          $body = @{
+            filters = @(
+              @{
+                criteria = @(
+                  @{
+                    filterType = 7
+                    value = $itemName
+                  }
+                )
+              }
+            )
+            flags = 914
+          } | ConvertTo-Json -Depth 10
+
+          $response = Invoke-RestMethod `
+            -Method Post `
+            -Uri "https://marketplace.visualstudio.com/_apis/public/gallery/extensionquery?api-version=7.2-preview.1" `
+            -ContentType "application/json" `
+            -Body $body
+
+          $extension = $response.results[0].extensions | Select-Object -First 1
+
+          if (-not $extension) {
+            Write-Host "Marketplace listing $itemName was not found. Skipping live version comparison."
+            return
+          }
+
+          $marketplaceVersionText = $extension.versions[0].version
+          $vsixVersion = [version]"${{ env.FINAL_VERSION }}"
+          $marketplaceVersion = [version]$marketplaceVersionText
+
+          Write-Host "VSIX version: $vsixVersion"
+          Write-Host "Marketplace version: $marketplaceVersion"
+
+          if ($vsixVersion -le $marketplaceVersion) {
+            throw "VSIX version $vsixVersion must be greater than Marketplace version $marketplaceVersion for $itemName."
+          }
+
       - name: Publish to Marketplace (with retry)
         shell: pwsh
         env:
