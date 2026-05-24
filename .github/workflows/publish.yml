@@ -108,17 +108,25 @@ jobs:
           for ($attempt = 1; $attempt -le $maxAttempts; $attempt++) {
             Write-Host "Publish attempt $attempt of $maxAttempts"
 
-            & $vsixPublisher `
+            $publishOutput = & $vsixPublisher `
               publish `
               -payload "bin/Release/MatrixUltrA12.vsix" `
               -publishManifest "publish-manifest.json" `
-              -personalAccessToken $env:VS_PAT
+              -personalAccessToken $env:VS_PAT 2>&1
+
+            $publishOutput | ForEach-Object { Write-Host $_ }
 
             $exitCode = $LASTEXITCODE
 
             if ($exitCode -eq 0) {
               Write-Host "Marketplace publish succeeded."
               break
+            }
+
+            $publishText = $publishOutput -join "`n"
+
+            if ($publishText -match "experimental" -or $publishText -match "not allowed in the Marketplace") {
+              throw "Marketplace publish failed because the VSIX manifest uses an installation target API version that Marketplace does not allow."
             }
 
             if ($exitCode -eq 29 -and $attempt -lt $maxAttempts) {
