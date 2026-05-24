@@ -70,6 +70,40 @@ jobs:
             throw "VSIX file not found: bin/Release/MatrixUltrA12.vsix"
           }
 
+      - name: Verify VSIX Manifest Compatibility
+        shell: pwsh
+        run: |
+          Add-Type -AssemblyName System.IO.Compression.FileSystem
+
+          $zip = [System.IO.Compression.ZipFile]::OpenRead("bin/Release/MatrixUltrA12.vsix")
+
+          try {
+            $entry = $zip.Entries |
+              Where-Object { $_.FullName -eq "extension.vsixmanifest" } |
+              Select-Object -First 1
+
+            if (-not $entry) {
+              throw "extension.vsixmanifest not found inside the VSIX."
+            }
+
+            $reader = New-Object System.IO.StreamReader($entry.Open())
+            [xml]$manifest = $reader.ReadToEnd()
+            $reader.Close()
+
+            $targets = @($manifest.PackageManifest.Installation.InstallationTarget)
+
+            foreach ($target in $targets) {
+              Write-Host "VSIX installation target: Id=$($target.Id), Version=$($target.Version)"
+
+              if ($target.Version -match "^\[18\.0,") {
+                throw "The VSIX payload still targets experimental API version 18.0. Rebuild MatrixUltrA12.vsix in Visual Studio after updating source.extension.vsixmanifest to [17.14,19.0)."
+              }
+            }
+          }
+          finally {
+            $zip.Dispose()
+          }
+
       - name: Verify VSIX Version Is New
         shell: pwsh
         run: |
