@@ -74,8 +74,9 @@ jobs:
         shell: pwsh
         run: |
           $tagName = "v${{ env.FINAL_VERSION }}"
+          $existingTag = git tag --list $tagName
 
-          if (git rev-parse -q --verify "refs/tags/$tagName") {
+          if ($existingTag -eq $tagName) {
             throw "Version ${{ env.FINAL_VERSION }} is already tagged as $tagName. Rebuild the VSIX with a newer version before publishing."
           }
 
