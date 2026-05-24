@@ -21,7 +21,7 @@
     <Deterministic>false</Deterministic>
     <GetVsixVersionFromAssembly>true</GetVsixVersionFromAssembly>
     <GeneratePkgDefFile>false</GeneratePkgDefFile>
-    <IncludeAssemblyInVSIXContainer>false</IncludeAssemblyInVSIXContainer>
+    <IncludeAssemblyInVSIXContainer>true</IncludeAssemblyInVSIXContainer>
     <CopyBuildOutputToOutputDirectory>true</CopyBuildOutputToOutputDirectory>
   </PropertyGroup>
   <!-- Debug | AnyCPU -->
@@ -56,6 +56,7 @@
     <WarningLevel>4</WarningLevel>
     <CreateVsixContainer>true</CreateVsixContainer>
     <DeployExtension>false</DeployExtension>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
   </PropertyGroup>
   <!-- Release | x86 -->
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
