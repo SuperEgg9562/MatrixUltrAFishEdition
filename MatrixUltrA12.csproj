@@ -20,7 +20,7 @@
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <Deterministic>false</Deterministic>
     <GetVsixVersionFromAssembly>true</GetVsixVersionFromAssembly>
-    <GeneratePkgDefFile>false</GeneratePkgDefFile>
+    <GeneratePkgDefFile>true</GeneratePkgDefFile>
     <IncludeAssemblyInVSIXContainer>true</IncludeAssemblyInVSIXContainer>
     <CopyBuildOutputToOutputDirectory>true</CopyBuildOutputToOutputDirectory>
   </PropertyGroup>
@@ -81,7 +81,9 @@
       <IncludeInVSIX>true</IncludeInVSIX>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <None Include="bin\Release\MatrixUltrA12.vsix" />
+    <Content Include="bin\Release\MatrixUltrA12.vsix">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <None Include="publish-manifest.json" />
     <None Include="README.md" />
     <None Include="source.extension.vsixmanifest">
