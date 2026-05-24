@@ -20,7 +20,7 @@
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <Deterministic>false</Deterministic>
     <GetVsixVersionFromAssembly>true</GetVsixVersionFromAssembly>
-    <GeneratePkgDefFile>false</GeneratePkgDefFile>
+    <GeneratePkgDefFile>true</GeneratePkgDefFile>
     <IncludeAssemblyInVSIXContainer>true</IncludeAssemblyInVSIXContainer>
     <CopyBuildOutputToOutputDirectory>true</CopyBuildOutputToOutputDirectory>
   </PropertyGroup>
@@ -56,6 +56,7 @@
     <WarningLevel>4</WarningLevel>
     <CreateVsixContainer>true</CreateVsixContainer>
     <DeployExtension>false</DeployExtension>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
   </PropertyGroup>
   <!-- Release | x86 -->
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
